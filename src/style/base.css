@@ -1,0 +1,39 @@
+/**
+ * base.css
+ * @authors tammy (http://tammylights.com)
+ * @date    2015-10-28 15:26:04
+ * @version 1.0
+ */
+
+/*初始化默认*/
+a, address, b, body, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, ul { margin: 0; padding: 0; }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
+hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
+button, html input[type=button], input[type=submit] { -webkit-apperance: button; cursor: pointer; }
+button[disabled], html input[disabled] { cursor: default; }
+ol, ul { list-style: none; }
+img { border: 0; vertical-align: middle; }
+em, i { font-style: normal; }
+.fl { float: left; }
+.fr { float: right; }
+.al { text-align: left; }
+.ac { text-align: center; }
+.ar { text-align: right; }
+.hide { display: none; }
+.clear, .clr { display: block; overflow: hidden; clear: both; height: 0; line-height: 0; font-size: 0; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { *zoom: 1; }
+.w { width: 990px; margin: 0 auto; }
+body { font: 12px/150% Arial, Verdana, "\5b8b\4f53"; color: #666; background: #fff; }
+a { text-decoration: none; color: #333; }
+a:link { color: #333; }
+a:visited { color: #333; }
+a:hover, a:active, a:focus { color: #333; }
+
+/*按钮*/
+.button, a.button { display: inline-block; border: 0px; cursor: pointer; padding: 8px 12px; text-align: center; border-radius: 4px; color: #fff; font-size: 14px; font-family: 'microsoft yahei'; }
+.button.orange_btn { background-color: #F29A64; }
+.button.orange_btn:hover { background-color: #FFB384; }
+.button.grey_btn { background-color: #A9A9A9; }
+.button.grey_btn:hover { background-color: #B5B5B5; }
+.button.disabled_btn { background-color: #A9A9A9; }
