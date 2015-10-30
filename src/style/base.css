@@ -6,6 +6,7 @@
  */
 
 /*初始化默认*/
+*, *:before, *:after { webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 a, address, b, body, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, ul, input { margin: 0; padding: 0; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
 hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
@@ -24,8 +25,9 @@ em, i { font-style: normal; }
 .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
 .clearfix { *zoom: 1; }
 .w { width: 990px; margin: 0 auto; }
+.caret { display: inline-block; width: 0; height: 0; margin-left: 2px; vertical-align: middle; border-top: 4px solid; border-right: 4px solid transparent; border-left: 4px solid transparent; }
 body { font: 12px/150% Arial, Verdana, "\5b8b\4f53"; color: #666; background: #fff; }
 a { text-decoration: none; color: #333; }
 a:link { color: #333; }
 a:visited { color: #333; }
-a:hover, a:active, a:focus { color: #333; outline: none; -moz-outline: none; }
+a:hover, a:active, a:focus { color: #333; -moz-outline: none; outline: none; }
