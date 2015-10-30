@@ -31,3 +31,16 @@ a { text-decoration: none; color: #333; }
 a:link { color: #333; }
 a:visited { color: #333; }
 a:hover, a:active, a:focus { color: #333; -moz-outline: none; outline: none; }
+
+/*按钮*/
+.button, a.button { display: inline-block; border: 0px; cursor: pointer; padding: 8px 12px; text-align: center; border-radius: 4px; color: #fff; font-size: 14px; font-family: 'microsoft yahei'; }
+.button.orange_btn { background-color: #F29A64; }
+.button.orange_btn:hover { background-color: #FFB384; }
+.button.grey_btn { background-color: #A9A9A9; }
+.button.grey_btn:hover { background-color: #B5B5B5; }
+.button.disabled_btn { background-color: #A9A9A9; }
+
+/*图标*/
+.icon { display: inline-block; vertical-align: middle; background: url(../images/icon.png) no-repeat; }
+.icon.icon-whiteEmail { background-position: -19px 0px; width: 14px; height: 15px; }
+.icon.icon-user { background-position: -1px 0px; width: 14px; height: 15px; }

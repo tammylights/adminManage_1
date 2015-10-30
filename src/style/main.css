@@ -5,28 +5,20 @@
  * @version 1.0
  */
 
-/*按钮*/
-.button, a.button { display: inline-block; border: 0px; cursor: pointer; padding: 8px 12px; text-align: center; border-radius: 4px; color: #fff; font-size: 14px; font-family: 'microsoft yahei'; }
-.button.orange_btn { background-color: #F29A64; }
-.button.orange_btn:hover { background-color: #FFB384; }
-.button.grey_btn { background-color: #A9A9A9; }
-.button.grey_btn:hover { background-color: #B5B5B5; }
-.button.disabled_btn { background-color: #A9A9A9; }
-
 /*顶部*/
 .header { position: relative; }
 .header .logo { height: 50px; display: inline-block; background: #367fa9 url(/src/images/logo.png) no-repeat center center; float: left; position: relative; width: 220px; }
 .header .navbar { height: 50px; background-color: #3c8dbc; margin-left: 220px; }
-.header .navbar .navbar-right { float: right !important; }
-.header .navbar .navbar-right .navbar-nav { float: left; margin-right: 10px; }
-.header .navbar .sidebar-toggle { padding: 9px 5px; border: 1px solid transparent; float: left; margin: 8px 0px 8px 5px; cursor: pointer; display: block; }
-.header .navbar .sidebar-toggle .sr-only { position: absolute; margin: -1px; left: 0px; top: 0px; }
-.header .navbar .sidebar-toggle .icon-bar { width: 22px; height: 2px; display: block; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; background: #f6f6f6; }
-.header .navbar .sidebar-toggle .icon-bar + .icon-bar { margin-top: 4px; }
-.header .navbar .navbar-right .navbar-nav>li { float: left; position: relative; display: block; }
-.header .navbar .navbar-right .navbar-nav>li>a { padding: 10px 15px; color: #fff; font-weight: bold; display: block; padding-top: 15px; }
-
-/*图标*/
-.icon { display: inline-block; vertical-align: middle; background: url(../images/icon.png) no-repeat; }
-.icon.icon-whiteEmail { background-position: -19px 0px; width: 14px; height: 12px; }
-.icon.icon-user { background-position: -1px 0px; width: 14px; height: 15px; }
+.header .navbar-right { float: right !important; }
+.header .navbar-right .navbar-nav { float: left; margin-right: 10px; }
+.header .sidebar-toggle { padding: 9px 5px; border: 1px solid transparent; float: left; margin: 8px 0px 8px 5px; cursor: pointer; display: block; }
+.header .sidebar-toggle .sr-only { position: absolute; margin: -1px; left: 0px; top: 0px; }
+.header .sidebar-toggle .icon-bar { width: 22px; height: 2px; display: block; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; background: rgba(255, 255, 255, 0.8); }
+.header .sidebar-toggle:hover .icon-bar { background: rgba(255, 255, 255, 1); }
+.header .sidebar-toggle .icon-bar + .icon-bar { margin-top: 4px; }
+.header .navbar-right .navbar-nav>li { float: left; position: relative; display: block; overflow: hidden; }
+.header .navbar-right .navbar-nav>li>a { color: #fff; font-weight: bold; display: block; padding: 15px; }
+.header .navbar-right .navbar-nav>li>a:hover { background: #357EA8; }
+.header .navbar-right .navbar-nav>li>a .icon { margin-right: 3px; }
+.header .navbar-right .navbar-nav>li>a .icon-user { height: 20px; }
+.header .navbar-right .navbar-nav>li .label { position: absolute; top: 6px; right: 6px; display: block; border-radius: 50%; background-color: #5cb85c; text-align: center; padding: 2px; width: 15px; height: 15px; line-height: 1em; }
