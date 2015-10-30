@@ -26,6 +26,9 @@ em, i { font-style: normal; }
 .clearfix { *zoom: 1; }
 .w { width: 990px; margin: 0 auto; }
 .caret { display: inline-block; width: 0; height: 0; margin-left: 2px; vertical-align: middle; border-top: 4px solid; border-right: 4px solid transparent; border-left: 4px solid transparent; }
+.img-circle { border-radius: 50%; }
+.pull-left { float: left !important; }
+.pull-right { float: right !important; }
 body { font: 12px/150% Arial, Verdana, "\5b8b\4f53"; color: #666; background: #fff; }
 a { text-decoration: none; color: #333; }
 a:link { color: #333; }

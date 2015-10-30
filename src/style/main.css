@@ -22,3 +22,7 @@
 .header .navbar-right .navbar-nav>li>a .icon { margin-right: 3px; }
 .header .navbar-right .navbar-nav>li>a .icon-user { height: 20px; }
 .header .navbar-right .navbar-nav>li .label { position: absolute; top: 6px; right: 6px; display: block; border-radius: 50%; background-color: #5cb85c; text-align: center; padding: 2px; width: 15px; height: 15px; line-height: 1em; }
+
+/*内容*/
+.wrapper { min-height: 100%; }
+.user-panel>.image>img { width: 45px; height: 45px; }
