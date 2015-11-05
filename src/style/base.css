@@ -29,7 +29,7 @@ em, i { font-style: normal; }
 .img-circle { border-radius: 50%; }
 .pull-left { float: left !important; }
 .pull-right { float: right !important; }
-body { font: 12px/150% Arial, Verdana, "\5b8b\4f53"; color: #666; background: #fff; }
+body { font: 14px/150% '宋体', Arial, Verdana, "\5b8b\4f53"; color: #666; background: #fff; }
 a { text-decoration: none; color: #333; }
 a:link { color: #333; }
 a:visited { color: #333; }
@@ -47,3 +47,7 @@ a:hover, a:active, a:focus { color: #333; -moz-outline: none; outline: none; }
 .icon { display: inline-block; vertical-align: middle; background: url(../images/icon.png) no-repeat; }
 .icon.icon-whiteEmail { background-position: -19px 0px; width: 14px; height: 15px; }
 .icon.icon-user { background-position: -1px 0px; width: 14px; height: 15px; }
+.icon.icon-greenCircle { width: 12px; height: 12px; border-radius: 50%; background: #3c763d; }
+.icon.icon-big { width: 15px; height: 13px; background-position: -35px -2px; }
+.icon.icon-lt { width: 5px; height: 9px; background-position: -52px -2px; }
+.icon.icon-lt-down { width: 9px; height: 5px; background-position: -51px -12px; }
