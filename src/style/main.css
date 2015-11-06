@@ -29,8 +29,10 @@
 .left-side { width: 220px; position: absolute; top: 50px; left: 0px; background: #f4f4f4; -webkit-box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.1); -moz-box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.1); box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.07); min-height: 100%; }
 .right-side { margin-left: 220px; }
 
+/*--------------------menu container begin-------------------------*/
+
 /*用户信息*/
-.user-panel { padding: 10px; }
+.user-panel { padding: 10px; margin-bottom: 20px; }
 .user-panel:before, .user-panel:after { display: table; content: " "; }
 .user-panel:after { clear: both; }
 .user-panel>.image>img { width: 45px; height: 45px; border: 1px solid #dfdfdf; }
@@ -54,4 +56,11 @@
 .sidebar-menu>li { border-top: 1px solid #fff; border-bottom: 1px solid #dbdbdb; }
 .sidebar-menu>li>a { padding: 12px 5px 12px 15px; display: block; }
 .sidebar-menu>li>a:hover { background-color: #fff; }
+.sidebar-menu>li>a>.icon { margin-right: 5px; }
 .sidebar-menu>li>a>.icon-lt, .sidebar-menu>li>a>.icon-lt-down { margin: 6px 15px 0 0; }
+.sidebar-menu>li>a .pull-right:after { clear: both; }
+.sidebar-menu li a, .sidebar-menu li span { font-family: 'Source Sans Pro', sans-serif; color: #555; font-size: 13px; }
+
+/*--------------------menu container end-------------------------*/
+.content-header { background: #fbfbfb; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); position: relative; padding: 15px 15px 10px 20px; }
+.content-header h1 { font-size: 24px; margin: 0; }
