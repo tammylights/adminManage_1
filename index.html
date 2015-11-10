@@ -10,9 +10,7 @@
 	<meta name="keywords" content="后台 管理 模板 分享 框架"/>
 	<link href="src/style/base.css" rel="stylesheet"/>
 	<link href="src/style/main.css" rel="stylesheet"/>
-	<!--[if lt IE 9]>
-	<script src="src/script/modernizr.js"></script>
-	<![endif]-->
+	<link href="src/style/select.css" rel="stylesheet"/>
 </head>
 <body>
 	<header class="header">
@@ -142,11 +140,20 @@
 				</ol>
 			</section>
 			<section class="content">
-				
+				<select>
+				<option>1111</option>
+				<option>1112221</option>
+				<option>11333311</option>
+				</select>
 			</section>
 		</aside>
 	</article>
 </body>
-<script type="text/javascript" src="src/script/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="src/script/main.js"></script>
+<script type="text/javascript" src="src/script/plugins/seajs/3.0.0/sea.js"></script>
+<script type="text/javascript">
+	seajs.use('main',function(Main){
+		var main = new Main();
+		main.init();
+	});
+</script>
 </html>
