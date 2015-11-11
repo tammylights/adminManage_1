@@ -139,7 +139,7 @@
 					</li>
 				</ol>
 			</section>
-			<section class="content">
+			<section class="content" id="content-container">
 				<select>
 				<option>1111</option>
 				<option>1112221</option>
@@ -149,6 +149,17 @@
 		</aside>
 	</article>
 </body>
+<script type="text/template" id="main_leftMenu_template">
+	{{ each menus as item index }}
+		<li>
+			<a href="javascript:void(0);">
+				<i class="icon icon-dashboard"></i>
+				<span>{{item.name}}</span>
+				<i class="icon icon-lt pull-right"></i>
+			</a>
+		</li>
+	{{/each}}
+</script>
 <script type="text/javascript" src="src/script/plugins/seajs/3.0.0/sea.js"></script>
 <script type="text/javascript">
 	seajs.use('main',function(Main){
