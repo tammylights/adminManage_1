@@ -15,6 +15,10 @@ button[disabled], html input[disabled] { cursor: default; }
 ol, ul { list-style: none; }
 img { border: 0; vertical-align: middle; }
 em, i { font-style: normal; }
+table { border-collapse: collapse; border-spacing: 0; background-color: transparent; border: 1px solid #ddd; width: 100%; }
+th, td { text-align: left; padding: 8px !important; }
+td { border: 1px solid #ddd; }
+th { border: 1px solid #ddd; border-bottom: 2px solid #ddd; border-top: 0px; }
 .fl { float: left; }
 .fr { float: right; }
 .al { text-align: left; }

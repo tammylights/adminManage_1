@@ -19,6 +19,7 @@ seajs.config({
 		this.JSON?'':'json'
 	],
 	map:[
-		['.js','.js?v=20151109']
+		['.js','.js?v=20151109'],
+		['.html','.html?v=20151109']
 	]
 });

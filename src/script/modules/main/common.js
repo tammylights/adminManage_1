@@ -429,21 +429,23 @@ define(function(require, exports, module) {
 		tammy.utils.ajax = ajax;
 	})();
 
+	$.ajaxSetup({
+		cache: false
+	});
+
 	/**
 	 * 请求页面
 	 */
 	(function() {
 		var showHTML = function(targetURL) {
 			console.log($('#content-container').length);
+
 			$('#content-container').load(targetURL, function(response, status, xhr) {
 				if (xhr.status === 404) {
 					log('没有该页面');
 				} else {
-					
+
 				}
-			});
-			$.ajaxSetup({
-				cache: false
 			});
 		};
 		tammy.utils.showHTML = showHTML;

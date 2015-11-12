@@ -28,12 +28,10 @@ define(function(require, exports, module) {
 		};
 
 		this.initMenu = function() {
-			var menuData = require('modules/FINAL DATA/leftMenu');
+			var menuData = require('modules/finalJSON/leftMenu');
 			var menuHtml = ky.utils.template('main_leftMenu_template', menuData);
-			log(menuData);
-			// var render = template.compile(returnData);
-			// var appendHtml = render(menuList);
-			// $('#menu-box').html(appendHtml);
+			$('#leftMenu-box').html(menuHtml);
+
 			// /*加载时默认触发一次变化事件进行事件加载*/
 			// $(window).trigger('hashchange');
 		};

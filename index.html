@@ -11,6 +11,9 @@
 	<link href="src/style/base.css" rel="stylesheet"/>
 	<link href="src/style/main.css" rel="stylesheet"/>
 	<link href="src/style/select.css" rel="stylesheet"/>
+	<!--[if lt IE 9]>
+    <script src="src/script/modules/main/modernizr.js"></script>
+    <![endif]-->
 </head>
 <body>
 	<header class="header">
@@ -69,56 +72,8 @@
 						</span>
 					</div>
 				</form>
-				<ul class="sidebar-menu">
-					<li>
-						<a href="javascript:void(0);">
-							<i class="icon icon-dashboard"></i>
-							<span>简介内容</span>
-							<i class="icon icon-lt pull-right"></i>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);">
-							<i class="icon icon-widget"></i>
-							<span>微应用</span>
-							<i class="icon icon-lt pull-right"></i>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);">
-							<i class="icon icon-charts"></i>
-							<span>图标展示</span>
-							<i class="icon icon-lt pull-right"></i>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);">
-							<i class="icon icon-computer"></i>
-							<span>元素展示</span>
-							<i class="icon icon-lt pull-right"></i>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);">
-							<i class="icon icon-edit"></i>
-							<span>编辑</span>
-							<i class="icon icon-lt pull-right"></i>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);">
-							<i class="icon icon-table"></i>
-							<span>表格</span>
-							<i class="icon icon-lt pull-right"></i>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);">
-							<i class="icon icon-message"></i>
-							<span>消息中心</span>
-							<i class="icon icon-lt pull-right"></i>
-						</a>
-					</li>
+				<ul class="sidebar-menu" id="leftMenu-box">
+					
 				</ul>
 			</section>
 		</aside>
@@ -153,7 +108,7 @@
 	{{ each menus as item index }}
 		<li>
 			<a href="javascript:void(0);">
-				<i class="icon icon-dashboard"></i>
+				<i class="icon {{item.icon}}"></i>
 				<span>{{item.name}}</span>
 				<i class="icon icon-lt pull-right"></i>
 			</a>
