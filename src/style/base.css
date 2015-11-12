@@ -7,7 +7,7 @@
 
 /*初始化默认*/
 *, *:before, *:after { webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-a, address, b, body, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, ul, input { margin: 0; padding: 0; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
+a, address, b, body, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, ul, input { margin: 0; padding: 0; /*-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none;*/ }
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
 hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
 button, html input[type=button], input[type=submit] { -webkit-apperance: button; cursor: pointer; }
@@ -40,7 +40,7 @@ a:visited { color: #333; }
 a:hover, a:active, a:focus { color: #333; -moz-outline: none; outline: none; }
 
 /*按钮*/
-.button, a.button { display: inline-block; border: 0px; cursor: pointer; padding: 8px 12px; text-align: center; border-radius: 4px; color: #fff; font-size: 14px; font-family: 'microsoft yahei'; }
+.button, a.button { display: inline-block; border: 0px; cursor: pointer; padding: 8px 12px; text-align: center; border-radius: 4px; font-size: 14px; font-family: 'microsoft yahei'; color: #fff; }
 .button.orange_btn { background-color: #F29A64; }
 .button.orange_btn:hover { background-color: #FFB384; }
 .button.grey_btn { background-color: #A9A9A9; }
