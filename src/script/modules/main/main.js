@@ -38,7 +38,7 @@ define(function(require, exports, module) {
 
 		this.registerEvent = function() {
 
-			$('#menu-box').on('click', '.submenu>a,li ul li>a', function(e) {
+			$('#leftMenu-box').on('click', 'li>a,li>ul>li>a', function(e) {
 				var m = $(this);
 				if (m.siblings('ul').length > 0 || m.parent().hasClass('submenu')) {
 					/**

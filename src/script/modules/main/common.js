@@ -438,8 +438,6 @@ define(function(require, exports, module) {
 	 */
 	(function() {
 		var showHTML = function(targetURL) {
-			console.log($('#content-container').length);
-
 			$('#content-container').load(targetURL, function(response, status, xhr) {
 				if (xhr.status === 404) {
 					log('没有该页面');

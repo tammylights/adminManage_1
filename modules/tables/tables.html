@@ -3,125 +3,236 @@
 	<div class="moduleFlag">
 		<h3>表格列表1</h3>
 	</div>
-	<div class="searchCriterion">
-		<table>
-			<tr>
-				<td>订单编号：</td>
-				<td>
-					<input type="text"/>
-				</td>
-				<td>订单编号：</td>
-				<td>
-					<input type="text"/>
-				</td>
-				<td>订单编号：</td>
-				<td>
-					<input type="text"/>
-				</td>
-			</tr>
-			<tr>
-				<td>订单编号：</td>
-				<td>
-					<input type="text"/>
-				</td>
-				<td>订单编号：</td>
-				<td>
-					<input type="text"/>
-				</td>
-				<td>订单编号：</td>
-				<td>
-					<input type="text"/>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="6">
-					<a class="button" href="javascript:void(0);">重置</a>
-					<a class="button" href="javascript:void(0);">导出</a>
-					<a class="button" href="javascript:void(0);">搜索</a>
-				</td>
-			</tr>
-		</table>
+	<div class="search-container">
+		<form action="/">
+			<table class="GSearch hide">
+				<tr>
+					<td class="searchTitle">订单编号：</td>
+					<td class="searchContent">
+						<input type="text" class="dateTime startTime"/>
+						<span>至</span>
+						<input type="text" class="dateTime endTime"/>
+					</td>
+					<td class="searchTitle">订单编号：</td>
+					<td class="searchContent">
+						<input type="text"/>
+					</td>
+					<td class="searchTitle">订单编号：</td>
+					<td class="searchContent">
+						<input type="text"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="searchTitle">订单编号：</td>
+					<td class="searchContent">
+						<input type="text"/>
+					</td>
+					<td class="searchTitle">订单编号：</td>
+					<td class="searchContent">
+						<input type="text"/>
+					</td>
+					<td class="searchTitle">订单编号：</td>
+					<td class="searchContent">
+						<input type="text"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="6">
+						<div class="opertionCon">
+							<input type="button" id="closeMoreSearch" value="关闭" class="button white_btn"/>
+							<input type="button" id="exports" value="导出" class="button white_btn"/>
+							<input type="reset" value="重置" class="button white_btn"/>
+							<input type="submit" value="查询" class="button white_btn"/>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form action="/">
+			<table class="pSearch ">
+				<tr>
+					<td class="searchTitle">订单编号：</td>
+					<td class="searchContent">
+						<input type="text" name="POrderNo"/>
+					</td>
+					<td>
+						<input type="button" value="查询" class="button white_btn"/>
+						<input type="button" value="高级查询" class="button white_btn"/>
+					</td>
+				</tr>
+			</table>
+		</form>
 	</div>
-	<table>
+	<table class="dataShow">
 		<thead>
 			<tr>
-				<th>序号</th>
-				<th>名称</th>
-				<th>时间</th>
-				<th>内容</th>
-				<th>操作</th>
+				<th width="15%">序号</th>
+				<th width="17%">名称</th>
+				<th width="19%">时间</th>
+				<th width="30%">内容</th>
+				<th width="20%">操作</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
+				<td>WL1000000000</td>
+				<td>北京壹号车科技有限责任公司</td>
+				<td>2015-01-10 10:10:01</td>
+				<td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+				<td>
+					<ul class="operaList">
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
+				<td>WL1000000000</td>
+				<td>北京壹号车科技有限责任公司</td>
+				<td>2015-01-10 10:10:01</td>
+				<td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+				<td>
+					<ul class="operaList">
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
+				<td>WL1000000000</td>
+				<td>北京壹号车科技有限责任公司</td>
+				<td>2015-01-10 10:10:01</td>
+				<td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+				<td>
+					<ul class="operaList">
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
+				<td>WL1000000000</td>
+				<td>北京壹号车科技有限责任公司</td>
+				<td>2015-01-10 10:10:01</td>
+				<td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+				<td>
+					<ul class="operaList">
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
+				<td>WL1000000000</td>
+				<td>北京壹号车科技有限责任公司</td>
+				<td>2015-01-10 10:10:01</td>
+				<td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+				<td>
+					<ul class="operaList">
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
+				<td>WL1000000000</td>
+				<td>北京壹号车科技有限责任公司</td>
+				<td>2015-01-10 10:10:01</td>
+				<td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+				<td>
+					<ul class="operaList">
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
+				<td>WL1000000000</td>
+				<td>北京壹号车科技有限责任公司</td>
+				<td>2015-01-10 10:10:01</td>
+				<td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+				<td>
+					<ul class="operaList">
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
+				<td>WL1000000000</td>
+				<td>北京壹号车科技有限责任公司</td>
+				<td>2015-01-10 10:10:01</td>
+				<td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+				<td>
+					<ul class="operaList">
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
+				<td>WL1000000000</td>
+				<td>北京壹号车科技有限责任公司</td>
+				<td>2015-01-10 10:10:01</td>
+				<td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+				<td>
+					<ul class="operaList">
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+					</ul>
+				</td>
 			</tr>
 			<tr>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
-				<td>aaaa</td>
+				<td>WL1000000000</td>
+				<td>北京壹号车科技有限责任公司</td>
+				<td>2015-01-10 10:10:01</td>
+				<td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+				<td>
+					<ul class="operaList">
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="button white_btn">删除</a>
+						</li>
+					</ul>
+				</td>
 			</tr>
 		</tbody>
 	</table>
