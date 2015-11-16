@@ -38,6 +38,8 @@ a { text-decoration: none; color: #333; }
 a:link { color: #333; }
 a:visited { color: #333; }
 a:hover, a:active, a:focus { color: #333; -moz-outline: none; outline: none; }
+.advanced_query { display: none; }
+.common_query { display: block; }
 
 /*按钮*/
 .button, a.button { display: inline-block; border: 0px; cursor: pointer; text-align: center; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-size: 14px; font-family: 'microsoft yahei'; color: #fff; padding: 5px 16px; }
@@ -66,3 +68,34 @@ a:hover, a:active, a:focus { color: #333; -moz-outline: none; outline: none; }
 .icon.icon-edit { width: 15px; height: 11px; background-position: -1px -41px; }
 .icon.icon-table { width: 13px; height: 11px; background-position: -22px -41px; }
 .icon.icon-message { width: 14px; height: 11px; background-position: -62px -41px; }
+
+/*分页开始*/
+.pagination { text-align: right; }
+.pagination a, .pagination .ky_pages span { height: 28px; line-height: 28px; display: inline-block; padding: 0 10px; border-radius: 5px; margin: 0 2px; color: #9ea9b1; background: #e8ecf0; }
+.pagination .ky_pages .ellipsis { border: 0; margin: 0; }
+.pagination .ky_pages .ky_current_page, .pagination a:hover, .pagination .ky_pages span:hover { background: #839097; color: #fff; }
+.pagination .ky_pages span.ky_next_page:hover, .pagination .ky_pages span.ky_pre_page:hover { background: #e8ecf0; color: #9ea9b1; }
+.pagination span { color: #666; margin: 0 5px }
+.pagination a i { width: 12px; height: 10px; overflow: hidden; }
+.pagination a i.previous { background-position: -22px -19px; margin-top: 10px; display: none; }
+.pagination a:hover i.previous { background-position: -60px -19px; }
+.pagination a i.next { background-position: 0px -19px; margin-top: 10px; display: none; }
+.pagination a:hover i.next { background-position: -38px -19px; }
+.pagination .next-a { *width: 55px }
+.pagination .ky_pages span.ellipsis { background: none; }
+.pagination .ky_pages span.ellipsis:hover { color: #9ea9b1; }
+.ky_pre_page, .ky_next_page { font-family: 'å®‹ä½“' }
+.pagination .ky_pages .ky_first_page, .pagination .ky_pages .ky_last_page {    /*display: none;*/ }
+.ky_pages, .ky_jump_to, .ky_page, .ky_page_next, .ky_page_pre { display: inline-block; vertical-align: bottom; *display: inline; *zoom: 1; }
+.ky_jump_to .ky_jump_text, .ky_jump_to .ky_jump_button { width: 36px; height: 30px; line-height: 30px; border-radius: 5px; padding: 0 0 0 4px; border: 1px solid #CACACA; margin-bottom: 0; }
+.ky_jump_to .ky_jump_button { background: #fff; cursor: pointer; width: 50px; vertical-align: bottom; }
+.ky_jump_to .ky_jump_button:hover { background: #4E82B6; border-color: #4E82B6; color: #fff; }
+.ky-select { width: 210px; height: 34px; border: 1px solid #D0D0D0; position: relative; cursor: pointer; }
+.ky-select .triangle { position: absolute; width: 0; height: 0; overflow: hidden; border-width: 10px 8px; border-color: #ACACAC transparent transparent; border-style: solid; top: 13px; right: 6px; _border-style: solid dashed dashed; }
+.ky-select .ky-option { height: 34px; line-height: 34px; padding-left: 10px; display: block; }
+.ky-select-dropdown { width: 210px; max-height: 200px; border: 1px solid #D0D0D0; display: none; position: absolute; top: 34px; left: -1px; background: #fff; overflow-y: auto; overflow-x: hidden; }
+.ky-select-dropdown a { height: 30px; line-height: 30px; padding: 0 10px; display: block; border-bottom: 1px solid #EBEBEB; }
+.ky-select-dropdown a:last-child { border-bottom: 0; }
+.ky-select-dropdown a:hover { text-decoration: none; background: #f5f5f5; }
+
+/*分页结束*/

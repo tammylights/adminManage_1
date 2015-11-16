@@ -23,9 +23,21 @@ define(function(require, exports, module) {
 			icon: 'icon-widget',
 			module: '/modules/widget',
 			childrens: [{
-				name: '应用1',
+				name: '应用11',
 				id: '200000000-1',
-				url: '/widget'
+				url: '/widget1'
+			},{
+				name: '应用12',
+				id: '200000000-1',
+				url: '/widget2'
+			},{
+				name: '应用13',
+				id: '200000000-1',
+				url: '/widget3'
+			},{
+				name: '应用14',
+				id: '200000000-1',
+				url: '/widget4'
 			}]
 		}, {
 			name: '图标示例',
@@ -41,11 +53,15 @@ define(function(require, exports, module) {
 			name: '元素示例',
 			id: '400000000',
 			icon: 'icon-computer',
-			module: '/modules/elements',
+			module: '/modules/demo',
 			childrens: [{
 				name: '子元素1',
 				id: '400000000-1',
 				url: '/elements'
+			},{
+				name: 's示例',
+				id: '400000000-1',
+				url: '/order/order_list'
 			}]
 		}, {
 			name: '编辑示例',

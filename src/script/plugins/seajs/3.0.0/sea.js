@@ -11,9 +11,8 @@ seajs.config({
 		'json':'plugins/json/json.min',
 		'template':'plugins/artTemplate/concise/template',
 		'select2':'plugins/select2/select2',
-		'common':'modules/main/common',
-		'main':'modules/main/main',
-		'modernizr':'modules/main/modernizr'
+		'common':'main/common',
+		'main':'main/main'
 	},
 	preload:[
 		this.JSON?'':'json'
