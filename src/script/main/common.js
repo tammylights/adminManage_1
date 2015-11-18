@@ -404,7 +404,6 @@ define(function(require, exports, module) {
 				cache: false,
 				async: settings.async,
 				beforeSend: function(xhr) {
-					(new tammy.ui.shadow()).init();
 					settings.ajaxSetHeader.call(null, xhr);
 				},
 				success: function(responseText, statusText, xhr) {
@@ -418,7 +417,6 @@ define(function(require, exports, module) {
 					settings.success.call(null, responseText, statusText, xhr);
 				},
 				complete: function(response, text) {
-					(new tammy.ui.shadow()).close();
 					settings.complete.call(null, response, text);
 				},
 				error: function(response, status, errorThrown) {
@@ -430,8 +428,28 @@ define(function(require, exports, module) {
 	})();
 
 	$.ajaxSetup({
-		cache: false
+		cache: false,
+		beforeSend:function(){
+			(new tammy.ui.shadow()).init();
+		},
+		complete:function(){
+			(new tammy.ui.shadow()).close();
+		}
 	});
+
+	/**
+	 * 修改菜单区域高度
+	 */
+	(function() {
+		var updateMenuBoxHeight = function() {
+			var winHeight = $(window).height();
+			var docHeight = $(document).height();
+			var menuEle = $('.left-side');
+			var final_height = winHeight >= docHeight ? winHeight : docHeight;
+			menuEle.height(final_height - 50);
+		};
+		tammy.utils.updateMenuBoxHeight = updateMenuBoxHeight;
+	})();
 
 	/**
 	 * 请求页面
@@ -442,7 +460,7 @@ define(function(require, exports, module) {
 				if (xhr.status === 404) {
 					log('没有该页面');
 				} else {
-
+					tammy.utils.updateMenuBoxHeight();
 				}
 			});
 		};
@@ -548,11 +566,6 @@ define(function(require, exports, module) {
 			m.option = {};
 			$.extend(m.option, option);
 		}
-
-		Shadow.prototype.init = function() {
-			var m = this;
-			m.addShadow();
-		};
 		Shadow.prototype.addShadow = function() {
 			var m = this;
 			if ($('#kyPoupshadow').length > 0) {
@@ -562,7 +575,11 @@ define(function(require, exports, module) {
 			$('body').append(shadowstr).end().find("#kyPoupshadow").css("height", $(document).height());
 		};
 		Shadow.prototype.close = function() {
-			$('#kyPoupshadow').remove();
+			$('#kyPoupshadow').fadeOut(600);
+		};
+		Shadow.prototype.init = function() {
+			var m = this;
+			m.addShadow();
 		};
 		tammy.ui.shadow = Shadow;
 	})();
@@ -739,7 +756,313 @@ define(function(require, exports, module) {
 					data: s.data,
 					success: function(returnData) {
 						log(2222);
-						returnData = {"errcode":0,"errstr":"","data":{"total":"193","waybillAllInfo":[{"id":"199","orderSN":"W151116149DA","payerId":20,"receiverId":247,"payerPhone":"16811114002","receiverPhone":"16869681673","sourceType":null,"sourceId":null,"deleterType":null,"amount":"1.23","deliveryPlace":"\u5b89\u5fbd-\u868c\u57e0","deliveryPid":3,"deliveryCid":37,"receiptPlace":"\u5317\u4eac-\u5317\u4eac","receiptPid":2,"receiptCid":52,"goodsInfo":"\u5efa\u6750","goodsCount":22,"goodsUnit":"\u5428","transactionDesc":null,"status":"0","createdTime":"2015-11-16 14:19:42","updatedTime":"2015-11-16 14:19:42","receiverName":"\u9ec4\u74dc\u4e09","payerName":"\u5409\u62c9\u5fb7\u7ecf","terminalType":1,"mDataObjectExistingStatus":3,"mFactory":null},{"id":"198","orderSN":"W15111614U6H","payerId":246,"receiverId":20,"payerPhone":"16800000000","receiverPhone":"16811114002","sourceType":null,"sourceId":null,"deleterType":null,"amount":"22.00","deliveryPlace":"\u798f\u5efa-\u5357\u5e73","deliveryPid":4,"deliveryCid":55,"receiptPlace":"\u798f\u5efa-\u5b81\u5fb7","receiptPid":4,"receiptCid":56,"goodsInfo":"\u852c\u83dc","goodsCount":11,"goodsUnit":"\u5428","transactionDesc":null,"status":"1","createdTime":"2015-11-16 14:01:57","updatedTime":"2015-11-16 14:01:57","receiverName":"\u5409\u62c9\u5fb7\u7ecf","payerName":"\u5f20\u4ef2\u793c","terminalType":1,"mDataObjectExistingStatus":3,"mFactory":null},{"id":"197","orderSN":"W15111613HOB","payerId":246,"receiverId":20,"payerPhone":"16800000000","receiverPhone":"16811114002","sourceType":null,"sourceId":null,"deleterType":null,"amount":"1.00","deliveryPlace":"\u6fb3\u95e8-\u6fb3\u95e8","deliveryPid":34,"deliveryCid":396,"receiptPlace":"\u5317\u4eac-\u5317\u4eac","receiptPid":2,"receiptCid":52,"goodsInfo":"\u98df\u54c1","goodsCount":322,"goodsUnit":"\u5428","transactionDesc":null,"status":"1","createdTime":"2015-11-16 13:55:52","updatedTime":"2015-11-16 13:55:52","receiverName":"\u5409\u62c9\u5fb7\u7ecf","payerName":"\u5f20\u4ef2\u793c","terminalType":1,"mDataObjectExistingStatus":3,"mFactory":null},{"id":"196","orderSN":"W15111611BO1","payerId":20,"receiverId":245,"payerPhone":"16811114002","receiverPhone":"16822220005","sourceType":null,"sourceId":null,"deleterType":null,"amount":"1.00","deliveryPlace":"\u6fb3\u95e8-\u6fb3\u95e8","deliveryPid":34,"deliveryCid":396,"receiptPlace":"\u5317\u4eac-\u5317\u4eac","receiptPid":2,"receiptCid":52,"goodsInfo":"\u77ff\u4ea7","goodsCount":1,"goodsUnit":"\u5428","transactionDesc":"\u533a","status":"1","createdTime":"2015-11-16 11:47:38","updatedTime":"2015-11-16 11:47:38","receiverName":"\u5927\u7c73\u4f01\u4e1a\u4e00","payerName":"\u5409\u62c9\u5fb7\u7ecf","terminalType":1,"mDataObjectExistingStatus":3,"mFactory":null},{"id":"194","orderSN":"W15111311J5S","payerId":47,"receiverId":20,"payerPhone":"16811114009","receiverPhone":"16811114002","sourceType":null,"sourceId":null,"deleterType":null,"amount":"11.00","deliveryPlace":"\u5b89\u5fbd-\u868c\u57e0","deliveryPid":3,"deliveryCid":37,"receiptPlace":"\u6fb3\u95e8-\u6fb3\u95e8","receiptPid":34,"receiptCid":396,"goodsInfo":"\u77ff\u4ea7","goodsCount":1,"goodsUnit":"\u5428","transactionDesc":null,"status":"3","createdTime":"2015-11-13 11:32:03","updatedTime":"2015-11-14 11:33:02","receiverName":"\u5409\u62c9\u5fb7\u7ecf","payerName":"\u54c8\u54c8\u54c8\u4f01\u4e1a","terminalType":1,"mDataObjectExistingStatus":3,"mFactory":null},{"id":"193","orderSN":"W15111311QCX","payerId":47,"receiverId":20,"payerPhone":"16811114009","receiverPhone":"16811114002","sourceType":null,"sourceId":null,"deleterType":null,"amount":"11142.00","deliveryPlace":"\u5b89\u5fbd-\u5b89\u5e86","deliveryPid":3,"deliveryCid":36,"receiptPlace":"\u6fb3\u95e8-\u6fb3\u95e8","receiptPid":34,"receiptCid":396,"goodsInfo":"\u77ff\u4ea7","goodsCount":1,"goodsUnit":"\u7bb1","transactionDesc":"11111111111111111111111111111111111111111111111111111111111111sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss\u597d\u597d\u53f7","status":"3","createdTime":"2015-11-13 11:26:10","updatedTime":"2015-11-14 11:27:01","receiverName":"\u5409\u62c9\u5fb7\u7ecf","payerName":"\u54c8\u54c8\u54c8\u4f01\u4e1a","terminalType":1,"mDataObjectExistingStatus":3,"mFactory":null},{"id":"192","orderSN":"W151113114HJ","payerId":47,"receiverId":20,"payerPhone":"16811114009","receiverPhone":"16811114002","sourceType":null,"sourceId":null,"deleterType":null,"amount":"1111111.00","deliveryPlace":"\u5b89\u5fbd-\u5b89\u5e86","deliveryPid":3,"deliveryCid":36,"receiptPlace":"\u5317\u4eac-\u5317\u4eac","receiptPid":2,"receiptCid":52,"goodsInfo":"\u65e5\u7528\u54c1","goodsCount":6.26,"goodsUnit":"\u5428","transactionDesc":null,"status":"3","createdTime":"2015-11-13 11:18:20","updatedTime":"2015-11-14 11:19:01","receiverName":"\u5409\u62c9\u5fb7\u7ecf","payerName":"\u54c8\u54c8\u54c8\u4f01\u4e1a","terminalType":1,"mDataObjectExistingStatus":3,"mFactory":null},{"id":"195","orderSN":"W15111317HEI","payerId":128,"receiverId":20,"payerPhone":"16801010101","receiverPhone":"16811114002","sourceType":null,"sourceId":null,"deleterType":null,"amount":"44.00","deliveryPlace":"\u6fb3\u95e8-\u6fb3\u95e8","deliveryPid":34,"deliveryCid":396,"receiptPlace":"\u798f\u5efa-\u5357\u5e73","receiptPid":4,"receiptCid":55,"goodsInfo":"\u5efa\u6750","goodsCount":2232,"goodsUnit":"\u5428","transactionDesc":null,"status":"1","createdTime":"2015-11-13 17:27:27","updatedTime":"2015-11-13 17:27:27","receiverName":"\u5409\u62c9\u5fb7\u7ecf","payerName":"\u4e0a\u7ebf","terminalType":1,"mDataObjectExistingStatus":3,"mFactory":null},{"id":"188","orderSN":"W15111215DOQ","payerId":20,"receiverId":47,"payerPhone":"16811114002","receiverPhone":"16811114009","sourceType":null,"sourceId":null,"deleterType":null,"amount":"1.00","deliveryPlace":"\u5b89\u5fbd-\u5b89\u5e86","deliveryPid":3,"deliveryCid":36,"receiptPlace":"\u5b89\u5fbd-\u5b89\u5e86","receiptPid":3,"receiptCid":36,"goodsInfo":"\u8bbe\u5907","goodsCount":1,"goodsUnit":"\u5428","transactionDesc":null,"status":"3","createdTime":"2015-11-12 15:54:07","updatedTime":"2015-11-13 15:55:01","receiverName":"\u54c8\u54c8\u54c8\u4f01\u4e1a","payerName":"\u5409\u62c9\u5fb7\u7ecf","terminalType":1,"mDataObjectExistingStatus":3,"mFactory":null},{"id":"186","orderSN":"W15111215A8A","payerId":20,"receiverId":47,"payerPhone":"16811114002","receiverPhone":"16811114009","sourceType":null,"sourceId":null,"deleterType":null,"amount":"1.00","deliveryPlace":"\u5b89\u5fbd-\u868c\u57e0","deliveryPid":3,"deliveryCid":37,"receiptPlace":"\u6fb3\u95e8-\u6fb3\u95e8","receiptPid":34,"receiptCid":396,"goodsInfo":"\u77ff\u4ea7","goodsCount":1,"goodsUnit":"\u5428","transactionDesc":"\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u53f7","status":"3","createdTime":"2015-11-12 15:53:08","updatedTime":"2015-11-13 15:54:01","receiverName":"\u54c8\u54c8\u54c8\u4f01\u4e1a","payerName":"\u5409\u62c9\u5fb7\u7ecf","terminalType":1,"mDataObjectExistingStatus":3,"mFactory":null}],"payerName":[],"receiverName":{"16869681673":"\u9ec4\u74dc\u4e09","16811114002":"\u5409\u62c9\u5fb7\u7ecf","16822220005":"\u5927\u7c73\u4f01\u4e1a\u4e00","16811114009":"\u54c8\u54c8\u54c8\u4f01\u4e1a","16800000000":"\u5f20\u4ef2\u793c","16801010101":"\u4e0a\u7ebf"}}};
+						returnData = {
+							"errcode": 0,
+							"errstr": "",
+							"data": {
+								"total": "193",
+								"waybillAllInfo": [{
+									"id": "199",
+									"orderSN": "W151116149DA",
+									"payerId": 20,
+									"receiverId": 247,
+									"payerPhone": "16811114002",
+									"receiverPhone": "16869681673",
+									"sourceType": null,
+									"sourceId": null,
+									"deleterType": null,
+									"amount": "1.23",
+									"deliveryPlace": "\u5b89\u5fbd-\u868c\u57e0",
+									"deliveryPid": 3,
+									"deliveryCid": 37,
+									"receiptPlace": "\u5317\u4eac-\u5317\u4eac",
+									"receiptPid": 2,
+									"receiptCid": 52,
+									"goodsInfo": "\u5efa\u6750",
+									"goodsCount": 22,
+									"goodsUnit": "\u5428",
+									"transactionDesc": null,
+									"status": "0",
+									"createdTime": "2015-11-16 14:19:42",
+									"updatedTime": "2015-11-16 14:19:42",
+									"receiverName": "\u9ec4\u74dc\u4e09",
+									"payerName": "\u5409\u62c9\u5fb7\u7ecf",
+									"terminalType": 1,
+									"mDataObjectExistingStatus": 3,
+									"mFactory": null
+								}, {
+									"id": "198",
+									"orderSN": "W15111614U6H",
+									"payerId": 246,
+									"receiverId": 20,
+									"payerPhone": "16800000000",
+									"receiverPhone": "16811114002",
+									"sourceType": null,
+									"sourceId": null,
+									"deleterType": null,
+									"amount": "22.00",
+									"deliveryPlace": "\u798f\u5efa-\u5357\u5e73",
+									"deliveryPid": 4,
+									"deliveryCid": 55,
+									"receiptPlace": "\u798f\u5efa-\u5b81\u5fb7",
+									"receiptPid": 4,
+									"receiptCid": 56,
+									"goodsInfo": "\u852c\u83dc",
+									"goodsCount": 11,
+									"goodsUnit": "\u5428",
+									"transactionDesc": null,
+									"status": "1",
+									"createdTime": "2015-11-16 14:01:57",
+									"updatedTime": "2015-11-16 14:01:57",
+									"receiverName": "\u5409\u62c9\u5fb7\u7ecf",
+									"payerName": "\u5f20\u4ef2\u793c",
+									"terminalType": 1,
+									"mDataObjectExistingStatus": 3,
+									"mFactory": null
+								}, {
+									"id": "197",
+									"orderSN": "W15111613HOB",
+									"payerId": 246,
+									"receiverId": 20,
+									"payerPhone": "16800000000",
+									"receiverPhone": "16811114002",
+									"sourceType": null,
+									"sourceId": null,
+									"deleterType": null,
+									"amount": "1.00",
+									"deliveryPlace": "\u6fb3\u95e8-\u6fb3\u95e8",
+									"deliveryPid": 34,
+									"deliveryCid": 396,
+									"receiptPlace": "\u5317\u4eac-\u5317\u4eac",
+									"receiptPid": 2,
+									"receiptCid": 52,
+									"goodsInfo": "\u98df\u54c1",
+									"goodsCount": 322,
+									"goodsUnit": "\u5428",
+									"transactionDesc": null,
+									"status": "1",
+									"createdTime": "2015-11-16 13:55:52",
+									"updatedTime": "2015-11-16 13:55:52",
+									"receiverName": "\u5409\u62c9\u5fb7\u7ecf",
+									"payerName": "\u5f20\u4ef2\u793c",
+									"terminalType": 1,
+									"mDataObjectExistingStatus": 3,
+									"mFactory": null
+								}, {
+									"id": "196",
+									"orderSN": "W15111611BO1",
+									"payerId": 20,
+									"receiverId": 245,
+									"payerPhone": "16811114002",
+									"receiverPhone": "16822220005",
+									"sourceType": null,
+									"sourceId": null,
+									"deleterType": null,
+									"amount": "1.00",
+									"deliveryPlace": "\u6fb3\u95e8-\u6fb3\u95e8",
+									"deliveryPid": 34,
+									"deliveryCid": 396,
+									"receiptPlace": "\u5317\u4eac-\u5317\u4eac",
+									"receiptPid": 2,
+									"receiptCid": 52,
+									"goodsInfo": "\u77ff\u4ea7",
+									"goodsCount": 1,
+									"goodsUnit": "\u5428",
+									"transactionDesc": "\u533a",
+									"status": "1",
+									"createdTime": "2015-11-16 11:47:38",
+									"updatedTime": "2015-11-16 11:47:38",
+									"receiverName": "\u5927\u7c73\u4f01\u4e1a\u4e00",
+									"payerName": "\u5409\u62c9\u5fb7\u7ecf",
+									"terminalType": 1,
+									"mDataObjectExistingStatus": 3,
+									"mFactory": null
+								}, {
+									"id": "194",
+									"orderSN": "W15111311J5S",
+									"payerId": 47,
+									"receiverId": 20,
+									"payerPhone": "16811114009",
+									"receiverPhone": "16811114002",
+									"sourceType": null,
+									"sourceId": null,
+									"deleterType": null,
+									"amount": "11.00",
+									"deliveryPlace": "\u5b89\u5fbd-\u868c\u57e0",
+									"deliveryPid": 3,
+									"deliveryCid": 37,
+									"receiptPlace": "\u6fb3\u95e8-\u6fb3\u95e8",
+									"receiptPid": 34,
+									"receiptCid": 396,
+									"goodsInfo": "\u77ff\u4ea7",
+									"goodsCount": 1,
+									"goodsUnit": "\u5428",
+									"transactionDesc": null,
+									"status": "3",
+									"createdTime": "2015-11-13 11:32:03",
+									"updatedTime": "2015-11-14 11:33:02",
+									"receiverName": "\u5409\u62c9\u5fb7\u7ecf",
+									"payerName": "\u54c8\u54c8\u54c8\u4f01\u4e1a",
+									"terminalType": 1,
+									"mDataObjectExistingStatus": 3,
+									"mFactory": null
+								}, {
+									"id": "193",
+									"orderSN": "W15111311QCX",
+									"payerId": 47,
+									"receiverId": 20,
+									"payerPhone": "16811114009",
+									"receiverPhone": "16811114002",
+									"sourceType": null,
+									"sourceId": null,
+									"deleterType": null,
+									"amount": "11142.00",
+									"deliveryPlace": "\u5b89\u5fbd-\u5b89\u5e86",
+									"deliveryPid": 3,
+									"deliveryCid": 36,
+									"receiptPlace": "\u6fb3\u95e8-\u6fb3\u95e8",
+									"receiptPid": 34,
+									"receiptCid": 396,
+									"goodsInfo": "\u77ff\u4ea7",
+									"goodsCount": 1,
+									"goodsUnit": "\u7bb1",
+									"transactionDesc": "11111111111111111111111111111111111111111111111111111111111111sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss\u597d\u597d\u53f7",
+									"status": "3",
+									"createdTime": "2015-11-13 11:26:10",
+									"updatedTime": "2015-11-14 11:27:01",
+									"receiverName": "\u5409\u62c9\u5fb7\u7ecf",
+									"payerName": "\u54c8\u54c8\u54c8\u4f01\u4e1a",
+									"terminalType": 1,
+									"mDataObjectExistingStatus": 3,
+									"mFactory": null
+								}, {
+									"id": "192",
+									"orderSN": "W151113114HJ",
+									"payerId": 47,
+									"receiverId": 20,
+									"payerPhone": "16811114009",
+									"receiverPhone": "16811114002",
+									"sourceType": null,
+									"sourceId": null,
+									"deleterType": null,
+									"amount": "1111111.00",
+									"deliveryPlace": "\u5b89\u5fbd-\u5b89\u5e86",
+									"deliveryPid": 3,
+									"deliveryCid": 36,
+									"receiptPlace": "\u5317\u4eac-\u5317\u4eac",
+									"receiptPid": 2,
+									"receiptCid": 52,
+									"goodsInfo": "\u65e5\u7528\u54c1",
+									"goodsCount": 6.26,
+									"goodsUnit": "\u5428",
+									"transactionDesc": null,
+									"status": "3",
+									"createdTime": "2015-11-13 11:18:20",
+									"updatedTime": "2015-11-14 11:19:01",
+									"receiverName": "\u5409\u62c9\u5fb7\u7ecf",
+									"payerName": "\u54c8\u54c8\u54c8\u4f01\u4e1a",
+									"terminalType": 1,
+									"mDataObjectExistingStatus": 3,
+									"mFactory": null
+								}, {
+									"id": "195",
+									"orderSN": "W15111317HEI",
+									"payerId": 128,
+									"receiverId": 20,
+									"payerPhone": "16801010101",
+									"receiverPhone": "16811114002",
+									"sourceType": null,
+									"sourceId": null,
+									"deleterType": null,
+									"amount": "44.00",
+									"deliveryPlace": "\u6fb3\u95e8-\u6fb3\u95e8",
+									"deliveryPid": 34,
+									"deliveryCid": 396,
+									"receiptPlace": "\u798f\u5efa-\u5357\u5e73",
+									"receiptPid": 4,
+									"receiptCid": 55,
+									"goodsInfo": "\u5efa\u6750",
+									"goodsCount": 2232,
+									"goodsUnit": "\u5428",
+									"transactionDesc": null,
+									"status": "1",
+									"createdTime": "2015-11-13 17:27:27",
+									"updatedTime": "2015-11-13 17:27:27",
+									"receiverName": "\u5409\u62c9\u5fb7\u7ecf",
+									"payerName": "\u4e0a\u7ebf",
+									"terminalType": 1,
+									"mDataObjectExistingStatus": 3,
+									"mFactory": null
+								}, {
+									"id": "188",
+									"orderSN": "W15111215DOQ",
+									"payerId": 20,
+									"receiverId": 47,
+									"payerPhone": "16811114002",
+									"receiverPhone": "16811114009",
+									"sourceType": null,
+									"sourceId": null,
+									"deleterType": null,
+									"amount": "1.00",
+									"deliveryPlace": "\u5b89\u5fbd-\u5b89\u5e86",
+									"deliveryPid": 3,
+									"deliveryCid": 36,
+									"receiptPlace": "\u5b89\u5fbd-\u5b89\u5e86",
+									"receiptPid": 3,
+									"receiptCid": 36,
+									"goodsInfo": "\u8bbe\u5907",
+									"goodsCount": 1,
+									"goodsUnit": "\u5428",
+									"transactionDesc": null,
+									"status": "3",
+									"createdTime": "2015-11-12 15:54:07",
+									"updatedTime": "2015-11-13 15:55:01",
+									"receiverName": "\u54c8\u54c8\u54c8\u4f01\u4e1a",
+									"payerName": "\u5409\u62c9\u5fb7\u7ecf",
+									"terminalType": 1,
+									"mDataObjectExistingStatus": 3,
+									"mFactory": null
+								}, {
+									"id": "186",
+									"orderSN": "W15111215A8A",
+									"payerId": 20,
+									"receiverId": 47,
+									"payerPhone": "16811114002",
+									"receiverPhone": "16811114009",
+									"sourceType": null,
+									"sourceId": null,
+									"deleterType": null,
+									"amount": "1.00",
+									"deliveryPlace": "\u5b89\u5fbd-\u868c\u57e0",
+									"deliveryPid": 3,
+									"deliveryCid": 37,
+									"receiptPlace": "\u6fb3\u95e8-\u6fb3\u95e8",
+									"receiptPid": 34,
+									"receiptCid": 396,
+									"goodsInfo": "\u77ff\u4ea7",
+									"goodsCount": 1,
+									"goodsUnit": "\u5428",
+									"transactionDesc": "\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u554a\u4f60\u597d\u53f7",
+									"status": "3",
+									"createdTime": "2015-11-12 15:53:08",
+									"updatedTime": "2015-11-13 15:54:01",
+									"receiverName": "\u54c8\u54c8\u54c8\u4f01\u4e1a",
+									"payerName": "\u5409\u62c9\u5fb7\u7ecf",
+									"terminalType": 1,
+									"mDataObjectExistingStatus": 3,
+									"mFactory": null
+								}],
+								"payerName": [],
+								"receiverName": {
+									"16869681673": "\u9ec4\u74dc\u4e09",
+									"16811114002": "\u5409\u62c9\u5fb7\u7ecf",
+									"16822220005": "\u5927\u7c73\u4f01\u4e1a\u4e00",
+									"16811114009": "\u54c8\u54c8\u54c8\u4f01\u4e1a",
+									"16800000000": "\u5f20\u4ef2\u793c",
+									"16801010101": "\u4e0a\u7ebf"
+								}
+							}
+						};
 						var data = returnData.data;
 						if (returnData.errcode !== 0) {
 							s.callBack.call(null, returnData);

@@ -6,6 +6,7 @@
  */
 define(function(require, exports, module) {
 	function RegisterJQueryEvent() {
+		var _this = this;
 		this.init = function() {
 			this.registerEvent();
 		};
@@ -47,6 +48,7 @@ define(function(require, exports, module) {
 				if (!currentHash || !repHash || !moduleInfo.module) {
 					log('无模块及参数,不做任何操作');
 					$('#content-container').empty();
+					ky.utils.updateMenuBoxHeight();
 					return false;
 				}
 				ky.utils.showHTML(moduleInfo.module);
