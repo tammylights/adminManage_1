@@ -8,14 +8,18 @@ define(function(require, exports, module) {
 	"use strict";
 	var FINAL_MENU_DATA_JSON = {
 		menus: [{
-			name: '简介内容',
+			name: '示例列表',
 			id: '100000000',
 			icon: 'icon-dashboard',
-			module: '/modules/introduction',
+			module: '/modules/demo',
 			childrens: [{
-				name: '子内容1',
+				name: '数据表格',
 				id: '100000000-1',
-				url: '/introduction'
+				url: '/order/order_list'
+			},{
+				name: '地图定位',
+				id: '100000000-2',
+				url: '/map/map1'
 			}]
 		}, {
 			name: '微应用',
