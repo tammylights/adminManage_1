@@ -1,0 +1,14 @@
+<!-- 地图示例 -->
+<div class="dataContent">
+	<div class="moduleFlag">
+		<h3>数据报表</h3>
+	</div>
+	<div id="myChart" style="width:1000px;height:600px;"></div>
+</div>
+<script type="text/javascript" src="/src/script/plugins/echarts/echarts.report.js"></script>
+<script type="text/javascript">
+	seajs.use('modules/map/dataReport',function(DataReport){
+		var report = new DataReport();
+		report.init('myChart');
+	});
+</script>

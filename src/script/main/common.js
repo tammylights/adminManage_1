@@ -461,6 +461,15 @@ define(function(require, exports, module) {
 					log('没有该页面');
 				} else {
 					tammy.utils.updateMenuBoxHeight();
+					var breadCrumb = $('.breadCrumb');
+					if(!breadCrumb.is(':visible')){
+						breadCrumb.show();
+					}
+					var chooseItem = $('#leftMenu-box').children('li.active');
+					var moduleEle = chooseItem.children('a');
+					$('#moduleTitle').text(moduleEle.children('span').text());
+					var subHtmlName = chooseItem.find('.active');
+					breadCrumb.children('.active').text(subHtmlName.find('span').eq(1).text());
 				}
 			});
 		};
@@ -755,7 +764,6 @@ define(function(require, exports, module) {
 					type: s.type,
 					data: s.data,
 					success: function(returnData) {
-						log(2222);
 						returnData = {
 							"errcode": 0,
 							"errstr": "",

@@ -46,7 +46,6 @@ define(function(require, exports, module) {
 					repHash = currentHash.replace(/^[#]$/ig, '');
 				var moduleInfo = ky.utils.getURLValue();
 				if (!currentHash || !repHash || !moduleInfo.module) {
-					log('无模块及参数,不做任何操作');
 					$('#content-container').empty();
 					ky.utils.updateMenuBoxHeight();
 					return false;

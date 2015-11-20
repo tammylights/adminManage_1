@@ -9,6 +9,7 @@ seajs.config({
 	alias:{
 		'jquery':'plugins/jQuery/1.10.2/jquery-1.10.2.min',
 		'json':'plugins/json/json.min',
+		'echarts':'plugins/dataReport/echarts.report',
 		'template':'plugins/artTemplate/concise/template',
 		'select2':'plugins/select2/select2',
 		'common':'main/common',

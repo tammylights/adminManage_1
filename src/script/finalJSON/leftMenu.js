@@ -13,13 +13,17 @@ define(function(require, exports, module) {
 			icon: 'icon-dashboard',
 			module: '/modules/demo',
 			childrens: [{
-				name: '数据表格',
+				name: '数据列表',
 				id: '100000000-1',
 				url: '/order/order_list'
 			},{
-				name: '地图定位',
+				name: '数据报表',
 				id: '100000000-2',
-				url: '/map/map1'
+				url: '/dataReport/dataReport_line'
+			},{
+				name: '按钮元素',
+				id: '100000000-3',
+				url: '/demo'
 			}]
 		}, {
 			name: '微应用',
