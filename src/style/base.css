@@ -52,6 +52,7 @@ a:hover, a:active, a:focus { color: #333; -moz-outline: none; outline: none; }
 .button.grey_btn { background-color: #A9A9A9; }
 .button.grey_btn:hover { background-color: #B5B5B5; }
 .button.disabled_btn { background-color: #A9A9A9; cursor: not-allowed; }
+.button.disabled_btn:hover { background-color: #A9A9A9; cursor: not-allowed; }
 
 /*图标*/
 .icon { display: inline-block; background: url(../images/icon.png) no-repeat; vertical-align: middle; }

@@ -24,6 +24,10 @@ define(function(require, exports, module) {
 				name: '按钮元素',
 				id: '100000000-3',
 				url: '/demo'
+			},{
+				name: '百度地图',
+				id: '100000000-4',
+				url: '/map/map'
 			}]
 		}, {
 			name: '微应用',
@@ -66,10 +70,6 @@ define(function(require, exports, module) {
 				name: '子元素1',
 				id: '400000000-1',
 				url: '/elements'
-			},{
-				name: 's示例',
-				id: '400000000-1',
-				url: '/order/order_list'
 			}]
 		}, {
 			name: '编辑示例',

@@ -81,10 +81,11 @@
 .dataContent table { margin: 20px auto 0px; }
 
 /*内容-表格查询条件*/
+.search-container select { color: #666; }
 .search-container td, .search-container th { padding: 5px 9px !important; }
 .search-container .common_query .searchContent { width: 160px; }
 .search-container table td.searchTitle { text-align: right; width: 145px; }
-.search-container table td.searchContent input[type="text"] { height: 30px; border: 1px solid #ddd; line-height: 30px; width: 145px; }
+.search-container table td.searchContent input[type="text"], select { height: 30px; border: 1px solid #ddd; line-height: 30px; width: 145px; }
 .search-container table td.searchContent input.dateTime, .dataContent>.search-container table td.searchContent input.dateTime + span { width: 62px; }
 .search-container table td, .dataContent>.search-container table th { border: 0; }
 .moduleFlag>h3 { display: inline-block; padding: 5px 0px 10px 10px; margin: 0; font-size: 18px; font-weight: 400; }
