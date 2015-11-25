@@ -107,3 +107,50 @@
 .page-box .pageUl li>a:hover { background-color: #eee; }
 .page-box .pageUl li:last-child>a { border-right: 1px solid #ddd; }
 .page-box .pageUl li>a.active { background: #428bca; border-color: #428bca; color: #fff; }
+
+/******保养维修-选择店铺 百度地图 begin**********************/
+.popup_map { border: 1px solid #d0d0d0; overflow: hidden; background: #fff; top: 60px; left: 200px; /*position: absolute; */ }
+.popup_map_big { width: 1050px; height: 700px; }
+
+/* 弹出层 1050*700 */
+.popup_map_small { width: 900px; height: 550px; }
+
+/* 弹出层 900*550 */
+
+/* 弹出层标题部分 */
+.popup_map_tit { height: 65px; border-bottom: 1px solid #d0d0d0; line-height: 65px; padding-left: 20px; color: #666; background: #dddee3; }
+.popup_map_tit select { width: 128px; margin-right: 10px; float: left; margin-top: 15px; }
+.popup_map_tit span { width: 16px; height: 16px; padding: 24px 24px 25px 25px; float: right; display: inline-block; cursor: pointer; }
+.popup_map_tit span:hover { background: #d8dbe4; border-left: 1px solid #d0d0d0; }
+
+/* 弹出层内容部分 */
+.popup_map_content { }
+.popup_map_left { width: 340px; border-right: 1px solid #d0d0d0; height: 634px; float: left; }
+.popup_map_left_tit { height: 55px; line-height: 55px; padding: 0 20px; background: #fff; border-bottom: 1px solid #d0d0d0; }
+.popup_map_list { height: 578px; overflow-y: auto; }
+.popup_map_list li { border-bottom: 1px solid #d0d0d0; height: 147px; cursor: pointer; padding: 20px; }
+.popup_map_list li:hover { background: #f9fafb; }
+.popup_map_list li.select { background: #fffcf5; }
+.popup_map_list h6 { height: 24px; position: relative; margin-bottom: 15px; font-size: 16px; font-weight: 700; line-height: 24px; }
+.popup_map_list h6 a { color: #333; }
+.popup_map_list h6 a:hover { text-decoration: underline; }
+.popup_map_list h6 i { position: absolute; right: 0; top: 0; }
+.popup_map_list dd { width: 93px; height: 70px; overflow: hidden; float: left; }
+.popup_map_list dt { padding: 8px 0 10px 103px; font-size: 12px; line-height: 20px; }
+.popup_map_list dt i { padding-right: 5px; float: left; margin-top: 3px; }
+.popup_map_list dt span { padding-left: 15px; }
+.popup_map_right { width: 708px; height: 634px; overflow: hidden; position: relative; }
+
+/* 以下为1024以下显示器时弹出层样式 */
+.popup_map_small .popup_map_left { height: 484px; }
+.popup_map_small .popup_map_list { height: 428px; }
+.popup_map_small .popup_map_right { width: 559px; height: 484px; }
+.popup_small { width: 353px; }
+.popup_small .popup_map_list { height: auto; }
+.popup_small .popup_map_list li { border: none; }
+.popup_small .popup_map_list dd { width: 120px; height: 90px; }
+.popup_small .popup_map_list dd img { width: 120px; height: 90px; }
+.popup_small .popup_map_list dt { padding-left: 130px; }
+.popup_ellipsis { height: 16px; padding-bottom: 4px; line-height: 10px; color: #fff; cursor: pointer; margin-left: 10px; display: inline-block; background: #506082; border-radius: 2px; padding: 0 6px; }
+
+/******保养维修-选择店铺 百度地图 end**********************/

@@ -9,45 +9,45 @@
 				<tr>
 					<td class="searchTitle">订单日期：</td>
 					<td class="searchContent">
-						<input type="text" class="dateTime startTime"/>
+						<input type="text" name="startTime" class="dateTime startTime"/>
 						<span>至</span>
-						<input type="text" class="dateTime endTime"/>
+						<input type="text" name="endTime" class="dateTime endTime"/>
 					</td>
-					<td class="searchTitle">订单编号：</td>
+					<td class="searchTitle">订单状态：</td>
 					<td class="searchContent">
-						<select id="order_type">
+						<select id="order_type" name="orderStatus">
 							<option value="0">请选择</option>
-							<option value="1">类型1</option>
-							<option value="2">类型2</option>
-							<option value="3">类型3</option>
+							<option value="1">正常</option>
+							<option value="2">出库</option>
+							<option value="3">锁定</option>
 						</select>
 					</td>
 					<td class="searchTitle">订单编号：</td>
 					<td class="searchContent">
-						<input type="text"/>
+						<input type="text" name="orderNo"/>
 					</td>
 				</tr>
 				<tr>
-					<td class="searchTitle">订单编号：</td>
+					<td class="searchTitle">订单地址：</td>
 					<td class="searchContent">
-						<input type="text"/>
+						<input type="text" name="orderAddress"/>
 					</td>
-					<td class="searchTitle">订单编号：</td>
+					<td class="searchTitle">联系人手机号：</td>
 					<td class="searchContent">
-						<input type="text"/>
+						<input type="text" name="phoneNum"/>
 					</td>
-					<td class="searchTitle">订单编号：</td>
+					<td class="searchTitle">订单金额：</td>
 					<td class="searchContent">
-						<input type="text"/>
+						<input type="text" name="orderMoney"/>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="6">
 						<div class="opertionCon">
-							<input type="button" id="closeMoreSearch" value="关闭" class="button white_btn common_query_btn"/>
-							<input type="button" id="exports" value="导出" class="button white_btn"/>
-							<input type="reset" value="重置" class="button white_btn"/>
-							<input type="submit" value="查询" class="button white_btn"/>
+							<input type="button" name="closeMoreSearch"  id="closeMoreSearch" value="关闭" class="button white_btn common_query_btn"/>
+							<input type="button" name="exportFile" id="exportFile" value="导出" class="button white_btn"/>
+							<input type="reset" name="reset" value="重置" class="button white_btn"/>
+							<input type="submit" name="search" value="查询" class="button white_btn"/>
 						</div>
 					</td>
 				</tr>
@@ -61,7 +61,7 @@
 						<input type="text" name="POrderNo" class=""/>
 					</td>
 					<td>
-						<input type="button" value="查询" class="button white_btn"/>
+						<input type="submit" value="查询" class="button white_btn"/>
 						<input type="button" value="高级查询" class="button white_btn advanced_query_btn"/>
 					</td>
 				</tr>

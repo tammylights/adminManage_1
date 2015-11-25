@@ -117,6 +117,22 @@ define(function(require, exports, module) {
 		tammy.utils.imgLoad = imgLoad;
 	})();
 
+	(function() {
+		function FormAsArray(form) {
+			var arr = $(form).serializeArray();
+			var final_json = {};
+			$.each(arr,function(index,item){
+				var attrName = item.name;
+				var attrVal = item.value;
+				if(!final_json[attrName]){
+					final_json[attrName] = attrVal;
+				}
+			});
+			return final_json;
+		}
+		tammy.utils.formAsArray = FormAsArray;
+	})();
+
 	/**
 	 * 字符串操作
 	 */

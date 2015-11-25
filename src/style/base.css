@@ -7,7 +7,8 @@
 
 /*初始化默认*/
 *, *:before, *:after { webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-a, address, b, td, th, body, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, ul, input { margin: 0; padding: 0; font: 12px/150% '微软雅黑', Arial, Verdana, "\5b8b\4f53"; color: #666; outline: none; /*-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none;*/ }
+a, address, b, td, th, body, code, dd, del, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, ul, input { margin: 0; padding: 0; color: #666; outline: none; /*-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none;*/ }
+body { background: #fff; width: 100%; height: 100%; min-width: 1000px; /*width: 1000px; */ font: 12px/150% '微软雅黑', Arial, Verdana, "\5b8b\4f53"; }
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
 hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
 button, html input[type=button], input[type=submit] { -webkit-apperance: button; cursor: pointer; }
@@ -24,6 +25,8 @@ th { border: 1px solid #ddd; border-bottom: 2px solid #ddd; border-top: 0px; bac
 .al { text-align: left; }
 .ac { text-align: center; }
 .ar { text-align: right; }
+.pr { position: relative; }
+.pa { position: absolute; }
 .hide { display: none; }
 .clear, .clr { display: block; height: 0; line-height: 0; font-size: 0; clear: both; overflow: hidden; }
 .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
@@ -33,7 +36,6 @@ th { border: 1px solid #ddd; border-bottom: 2px solid #ddd; border-top: 0px; bac
 .img-circle { border-radius: 50%; }
 .pull-left { float: left !important; }
 .pull-right { float: right !important; }
-body { background: #fff; width: 100%; height: 100%; min-width: 1000px; /*width: 1000px; */ }
 a { text-decoration: none; color: #333; }
 a:link { color: #333; }
 a:visited { color: #333; }
