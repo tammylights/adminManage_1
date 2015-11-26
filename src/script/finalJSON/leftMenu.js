@@ -28,6 +28,10 @@ define(function(require, exports, module) {
 				name: '百度地图',
 				id: '100000000-4',
 				url: '/map/map'
+			},{
+				name: '图片旋转',
+				id: '100000000-4',
+				url: '/rotateImg/rotateImg'
 			}]
 		}, {
 			name: '微应用',

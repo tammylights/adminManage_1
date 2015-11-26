@@ -1,0 +1,11 @@
+<div id="demo">
+	<img src="/src/images/Hydrangeas.jpg" width="732" height="549" id="img">
+</div>
+<input type="button" id="routeImgBtn" value="旋转">
+<script type="text/javascript">
+	seajs.use('modules/rotateImg/rotateImg',function(RotateImg){
+		document.getElementById('routeImgBtn').onclick = function(){
+			RotateImg('img','left');
+		};
+	});
+</script>

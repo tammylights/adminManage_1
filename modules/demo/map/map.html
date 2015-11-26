@@ -37,7 +37,7 @@
 				<ul class="cf mb20">
 					<li class="cf">
 						<h6>
-							<a href="{{shopHomeLink}}">{{shopName}}</a>
+							<a href="{{shopHomeLink}}" target="_blank">{{shopName}}</a>
 						</h6>
 						<dl class="cf">
 							<dd>
@@ -65,9 +65,9 @@
 </script>
 <script type="text/template" id="shopList_item">
 	{{each shopList as item index}}
-		<li data-title="shop-map-identity-{{index}}">
+		<li data-title="shop-map-identity-{{index}}" data-item="{{item}}">
 			<h6>
-				<a href="/">{{item.shopName}}</a> <i class="icons icon_ticket"></i>
+				<a href="javascript:void(0);">{{item.shopName}}</a> <i class="icons icon_ticket"></i>
 			</h6>
 			<dl class="cf">
 				<dd>
