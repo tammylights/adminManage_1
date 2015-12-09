@@ -32,6 +32,10 @@ define(function(require, exports, module) {
 				name: '图片旋转',
 				id: '100000000-4',
 				url: '/rotateImg/rotateImg'
+			},{
+				name: '页面弹窗',
+				id: '100000000-5',
+				url: '/myAlert/myAlert'
 			}]
 		}, {
 			name: '微应用',

@@ -154,3 +154,22 @@
 .popup_ellipsis { height: 16px; padding-bottom: 4px; line-height: 10px; color: #fff; cursor: pointer; margin-left: 10px; display: inline-block; background: #506082; border-radius: 2px; padding: 0 6px; }
 
 /******保养维修-选择店铺 百度地图 end**********************/
+
+/*弹出窗样式*/
+#tammy_myAlert { position: fixed; z-index: 99999; background-color: #fff; border-radius: 3px; overflow: hidden; left: 50%; top: 50%; min-width: 400px; min-height: 260px; }
+#tammy_myAlert a { text-decoration: none; color: #22448d; }
+#tammy_myAlert a:hover { color: #0077e5; }
+#tammy_myAlert .myAlert_content, #tammy_myAlert .myAlert_button { padding: 10px; }
+#tammy_myAlert .myAlert_title { height: 46px; line-height: 46px; color: #333; background-color: #eceef2; font-size: 18px; font-weight: 700; }
+#tammy_myAlert .myAlert_title i { margin: 14.5px; }
+#tammy_myAlert .myAlert_title span { padding-left: 20px; float: left; }
+#tammy_myAlert .myAlert_title a { display: inline-block; width: 45px; height: 45px; float: right; cursor: pointer; }
+#tammy_myAlert .myAlert_title a:hover { background-color: rgb(219, 223, 230); }
+#tammy_myAlert .myAlert_content { min-height: 100px; }
+#tammy_myAlert .myAlert_content.myAlert_confirm { font-size: 16px; line-height: 100px; text-align: center; }
+#tammy_myAlert .myAlert_button { text-align: center; }
+#tammy_myAlert .myAlert_button .button { display: inline-block; padding: 0px 10px; border: 0px; color: #fff; height: 50px; line-height: 50px; font-size: 18px; font-weight: 700; border-radius: 3px; cursor: pointer; }
+#tammy_myAlert .myAlert_button .button.button_orange { background-color: #ff7f00; width: 120px; }
+#tammy_myAlert .myAlert_button .button.button_orange:hover { background: #ffa246; }
+#tammy_myAlert .myAlert_button a { font-size: 16px; padding-left: 20px; }
+#tammy_myAlert_Shadow { z-index: 99998; background-color: #000; opacity: 0.6; filter: alpha(opacity=60); position: fixed; width: 100%; height: 100%; top: 0; left: 0; }

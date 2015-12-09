@@ -1,0 +1,52 @@
+<!-- 表格示例 -->
+<div class="dataContent">
+	<div class="moduleFlag">
+		<h3>页面弹窗</h3>
+	</div>
+	<div class="button_box">
+		<a class="button orange_btn" id="tan1">弹出</a>
+	</div>
+</div>
+<script type="text/template" id="myAlert_template">
+	<div class="popup_small">
+		<div class="pr">
+			<div class="popup_map_list">
+				<ul class="cf mb20">
+					<li class="cf">
+						<h6>
+							<a href="{{shopHomeLink}}" target="_blank">{{shopName}}</a>
+						</h6>
+						<dl class="cf">
+							<dd>
+							</dd>
+							<dt>
+								<p>
+									<i class="icons icon_dark_map"></i>
+									<span class="block">{{shopAddress}}</span>
+								</p>
+								<p class="pr">
+									<i class="icons icon_dark_tel fl"></i> <strong class="fn fl">{{shopPhone}}</strong> <b class="popup_ellipsis fn">...</b>
+									<span class="tel_No hide">1111111</span>
+								</p>
+							</dt>
+						</dl>
+					</li>
+				</ul>
+				<div class="tc">
+					<input type="button" class="btn btn_orange w190" value="选择这家店" />
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+<script type="text/javascript">
+	seajs.use('modules/myAlert/myAlert',function(MyAlert){
+		log(MyAlert);
+		$('#tan1').click(function(){
+			MyAlert.alert({
+				title:'1111111',
+				content:'1111'
+			});
+		});
+	});
+</script>
