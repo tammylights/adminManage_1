@@ -1,0 +1,80 @@
+/**
+
+ * 城市切换
+
+ */
+body { background: #f8f9fd; font-family: "微软雅黑", Arial, Helvetica, sans-serif; color: #555; font-size: 14px; }
+a { color: #888; text-decoration: none; }
+a:hover { color: #f60; text-decoration: none; }
+#changeCity>ul>li { float: left; padding: 10px; }
+#changeCity ul li a:hover .icon-downArrow { background-position: -60px -205px; }
+.topbar-icon, .navcar li a, .navcar li .icon-newcar, .citypop .citypop-content .citypop-close i, .citypop-search, .citypop-ct .zdicon, .citypop-ct .ntextdicon { background: url(/images/cityico.png) no-repeat; }
+.citypop { position: absolute; top: 25px; left: 70px; padding: 2px; z-index: 1000; font-size: 12px; line-height: 26px; display: none; }
+.citypop a:link, .citypop a:visited { text-decoration: none }
+.citypop a:hover { color: #d60000 }
+.citypop .citypop-content { width: 485px; position: relative; z-index: 1; border: 1px solid #ccd3e4; background-color: #fff }
+.citypop .citypop-content .citypop-close { display: inline-block; width: 29px; height: 29px; overflow: hidden; position: absolute; right: 0; _right: -1px; top: 0; background-color: #fafbfc; border-left: solid 1px #cfd5e5 }
+.citypop .citypop-content .citypop-content-top { height: 29px; line-height: 29px; padding-left: 8px; position: relative; background-color: #fcfcfc; border-bottom: solid 1px #ccd3e4 }
+.citypop .citypop-content .citypop-close i { display: inline-block; width: 16px; height: 16px; background-position: -19px -365px; margin: 6px; cursor: pointer; line-height: 16px; text-align: center; }
+.citypop .citypop-content a.citypop-close:hover { background-color: #d60000 }
+.citypop .citypop-content a.citypop-close:hover i { background-position: 1px -365px; color: #fff; }
+.citypop .citypop-arrow { overflow: hidden; position: absolute; z-index: 2; font-family: "\5b8b\4f53" }
+.citypop .citypop-arrow .citypop-arrow-shadow { filter: alpha(opacity = 10); -moz-opacity: .1; opacity: .1 }
+.citypop .citypop-arrow .citypop-arrow-shadow, .citypop .citypop-arrow .citypop-arrow-border, .citypop .citypop-arrow .citypop-arrow-background { overflow: hidden; position: absolute; font-size: 12pt }
+.citypop-bottom .citypop-arrow { width: 16px; height: 14px; top: -11px; left: 23px }
+.citypop-bottom .citypop-arrow .citypop-arrow-shadow, .citypop-bottom .citypop-arrow .citypop-arrow-border, .citypop-bottom .citypop-arrow .citypop-arrow-background { height: 11px }
+.citypop-bottom .citypop-arrow .citypop-arrow-border { top: 3px; color: #d0d0e8 }
+.citypop-bottom .citypop-arrow .citypop-arrow-background { top: 4px; color: #f8fcff }
+.citypop-search { width: 140px; height: 22px; float: left; margin-top: 3px; background-position: 3px 3px; border: solid 1px #ccd3e4; background-color: #fff; position: relative }
+.citypop-search input { outline: 0; height: 22px; line-height: 22px; width: 118px; position: absolute; left: 22px; top: 0; border: 0; background-color: #fff; color: #b8bbc1; padding: 0 }
+.citypop-search input.focus { width: 132px; padding: 0 4px; left: 0; color: #000 }
+.citypop-hotcity { float: left; padding-left: 5px }
+.citypop-hotcity a { margin-left: 10px; display: inline-block; float: left }
+.citypop-nb { height: 28px; padding: 8px 6px; border-bottom: dotted 1px #cecfd3 }
+.citypop-nb a { display: inline-block; width: 19px; height: 19px; line-height: 19px; border-radius: 2px; margin: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; text-align: center; border: solid 1px #cbddeb; background-color: #f0f9fe; float: left }
+.citypop-nb a.current:link, .citypop-nb a.current:hover, .citypop-nb a.current:visited, .citypop-nb a:hover { background-color: #3b5997; border: solid 1px #17469e; color: #fff }
+.citypop-scity { height: 255px; overflow-y: scroll; overflow-x: hidden }
+.citypop-scity dl { border-top: dotted 1px #cecfd3; margin: 0; overflow: hidden; padding: 6px 0; padding: 8px 0\9 }
+.citypop-scity .dlbg { background-color: #f9f9f9 }
+.citypop-scity dl.dlbg-top { border-top: 0 }
+.citypop-scity dl dt, .citypop-scity dl dd { float: left; margin: 0 }
+.citypop-scity dl dt { width: 78px; color: #333; text-align: right; font-weight: bold; padding-top: 2px }
+.citypop-scity dl dt .tx, .citypop-scity dl dt .nu { height: 20px; line-height: 20px; display: inline-block; float: right; padding: 0 }
+.citypop-scity dl dt .nu { float: left; font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #d0d0d0; font-weight: 100; padding-left: 10px }
+.citypop-scity dl dd { width: 390px }
+.citypop-scity dl dd a:link, .citypop-scity dl dd a:active, .citypop-scity dl dd a:visited { height: 20px; line-height: 20px; display: block; float: left; padding: 0 5px; margin: 2px; white-space: nowrap }
+.citypop-scity dl dd a:hover { height: 20px; line-height: 20px; color: #fff; background-color: #ff9410; _color: #d60000; _background-color: none }
+.citypop-scity a.current:link, .citypop-scity a.current:hover, .citypop-scity a.current:visited { background-color: #ff600f; color: #fff }
+.citypop-scity dl:after, .citypop-scity dl dd:after, .citypop-ct ul li a:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; line-height: 0 }
+.citypop-scity dl, .citypop-scity dl dd, .citypop-ct ul li a { zoom: 1 }
+.citypop-ct { width: 195px; position: absolute; left: -1px; top: 24px; border: solid 1px #ccd3e4; background-color: #fff }
+.citypop-ct .zdicon, .citypop-ct .ntextdicon { height: 14px; line-height: 14px; padding: 2px 0 2px 15px; color: #b8bbc1; margin-left: 5px }
+.citypop-ct .zdicon { background-position: -279px -161px }
+.citypop-ct .ntextdicon { background-position: -2px -17px }
+.citypop-ct ul { list-style: none; padding: 0; margin: 0 }
+.citypop-ct ul li { float: none; height: 26px; line-height: 26px; overflow: hidden; clear: both; border-top: dotted 1px #ccd3e4 }
+.citypop-ct ul li a { display: block; height: 26px; line-height: 26px; overflow: hidden; padding: 0 12px }
+.citypop-ct ul li a:hover, .citypop-ct ul li.selected { background-color: #f9f9f9 }
+.citypop-ct ul li span { float: left; display: inline-block }
+.citypop-ct ul li b { display: inline-block; font-weight: 100; color: #b8bbc1; float: right }
+.logistics_select { position: relative; width: 200px; padding: 13px 10px; background: #f8f9fd; float: left; }
+.logistics_label { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding-right: 15px; }
+.sel { height: 52px !important; background: #fff !important; }
+.logistics_select:after { content: ""; position: absolute; right: 10px; top: 19px; height: 12px; width: 12px; background: url(../images/icons.png) no-repeat; background-position: 0px -1534px; }
+.logistics_select_btn { position: relative; background: #fff; width: 378px; }
+.logistics_ul_r .logistics_select_input1 { width: 249px; padding-left: 45px; height: 37px; line-height: 37px; float: left; margin-left: 10px; background: #f8f9fd; }
+.logistics_ul_r .logistics_select_input2 { width: 74px; height: 45px; line-height: 45px; float: left; background: #e8ebf4; margin-left: -1px; border: none; }
+.logistics_ul_r i { background: url(../images/sou.png) no-repeat; position: absolute; width: 19px; height: 19px; display: inline-block; left: 69%; top: 21px; }
+.citypop_po { left: 200px !important; top: 100px !important; }
+.citypop-nb2 a { background: #f7f7f7 !important; }
+.citypop-nb2 a.current:link, .citypop-nb2 a.current:hover, .citypop-nb2 a.current:visited, .citypop-nb2 a:hover { background: #767a88 !important; color: #fff }
+.citypop-scity a.current2:link, .citypop-scity a.current2:hover, .citypop-scity a.current2:visited { background: #767a88 !important; color: rgb(255, 255, 255); }
+.citypop-content-top1 { height: 67px !important; line-height: 67px !important; background: #fff !important; border-bottom: 1px solid #e2e4e8 !important; }
+.citypop-search1 { height: 35px !important; margin-top: 16px !important; width: 180px !important; background: #f8f9fd !important; border-radius: 2px; }
+.citypop-search1 input { width: 146px !important; background: #f8f9fd !important; box-shadow: none !important; height: 35px !important; }
+.citypop-search1 input:focus, .citypop-search1 input:focus, select:focus, textarea:focus { border: none !important; }
+.citypop .citypop-content .citypop-close2 { background: #f8f9fd !important; height: 35px !important; overflow: hidden; right: 13px !important; top: 18px !important; width: 35px !important; border: 1px solid #e2e3e8 !important; line-height: 35px; text-align: center; font-size: 17px; font-weight: 500; }
+.citypop .citypop-content .citypop-close2:hover { background: #f75c32 !important; color: #fff; }
+.citypop .citypop-content .citypop-close2_i { color: #9da0ac !important; }
+.citypop .citypop-content .citypop-close2:hover .citypop-close2_i { color: #fff !important; }
+.citypop-content2 { border: none !important; box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3) !important; }
