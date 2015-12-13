@@ -28,8 +28,8 @@ a:hover { color: #f60; text-decoration: none; }
 .citypop-search { width: 140px; height: 22px; float: left; margin-top: 3px; background-position: 3px 3px; border: solid 1px #ccd3e4; background-color: #fff; position: relative }
 .citypop-search input { outline: 0; height: 22px; line-height: 22px; width: 118px; position: absolute; left: 22px; top: 0; border: 0; background-color: #fff; color: #b8bbc1; padding: 0 }
 .citypop-search input.focus { width: 132px; padding: 0 4px; left: 0; color: #000 }
-.citypop-hotcity { float: left; padding-left: 5px }
-.citypop-hotcity a { margin-left: 10px; display: inline-block; float: left }
+.citypop-hotcity { float: left; padding-left: 5px; margin-top: 20px; }
+.citypop-hotcity a { margin-left: 10px; display: inline-block; float: left; line-height: 29px !important; }
 .citypop-nb { height: 28px; padding: 8px 6px; border-bottom: dotted 1px #cecfd3 }
 .citypop-nb a { display: inline-block; width: 19px; height: 19px; line-height: 19px; border-radius: 2px; margin: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; text-align: center; border: solid 1px #cbddeb; background-color: #f0f9fe; float: left }
 .citypop-nb a.current:link, .citypop-nb a.current:hover, .citypop-nb a.current:visited, .citypop-nb a:hover { background-color: #3b5997; border: solid 1px #17469e; color: #fff }
@@ -47,7 +47,7 @@ a:hover { color: #f60; text-decoration: none; }
 .citypop-scity a.current:link, .citypop-scity a.current:hover, .citypop-scity a.current:visited { background-color: #ff600f; color: #fff }
 .citypop-scity dl:after, .citypop-scity dl dd:after, .citypop-ct ul li a:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; line-height: 0 }
 .citypop-scity dl, .citypop-scity dl dd, .citypop-ct ul li a { zoom: 1 }
-.citypop-ct { width: 195px; position: absolute; left: -1px; top: 24px; border: solid 1px #ccd3e4; background-color: #fff }
+.citypop-ct { width: 195px; position: absolute; left: -1px; top: 37px; border: solid 1px #ccd3e4; background-color: #fff; display: none; }
 .citypop-ct .zdicon, .citypop-ct .ntextdicon { height: 14px; line-height: 14px; padding: 2px 0 2px 15px; color: #b8bbc1; margin-left: 5px }
 .citypop-ct .zdicon { background-position: -279px -161px }
 .citypop-ct .ntextdicon { background-position: -2px -17px }
