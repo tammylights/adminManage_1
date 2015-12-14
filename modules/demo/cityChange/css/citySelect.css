@@ -1,0 +1,45 @@
+/**
+ * 城市切换
+ */
+.citypop { position: absolute; top: 25px; left: 70px; z-index: 1000; font-size: 12px; /*display: none;*/ }
+.citypop a { text-decoration: none; color: #888; }
+.citypop a:hover { color: #fff; }
+.citypop #citypop-search-result-list a:hover { color: #888; }
+.citypop .citypop-content { width: 485px; position: relative; z-index: 1; border: none; background-color: #fff; box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3); border: 1px solid #ccd3e4; }
+.citypop .citypop-content .citypop-content-top { height: 67px; line-height: 67px; padding-left: 8px; position: relative; background-color: #fff; border-bottom: solid 1px #e2e4e8; }
+.citypop .citypop-content .citypop-close { display: inline-block; width: 35px; height: 35px; position: absolute; right: 13px; top: 18px; background-color: #f8f9fd; border: solid 1px #e2e3e8; border-radius: 2px; line-height: 38px; }
+.citypop .citypop-content .citypop-close i { display: inline-block; width: 10px; height: 10px; margin: 12px; background: url(../images/citypop_icon.png) no-repeat -1px -4px; }
+.citypop .citypop-content a.citypop-close:hover { background-color: #f75c32; border: 1px solid #f75c32; }
+.citypop .citypop-content a.citypop-close:hover i { background-position: -1px -18px; }
+.citypop-search { width: 180px; height: 35px; float: left; margin-top: 16px; border: solid 1px #ccd3e4; position: relative; border-radius: 2px; background: #f8f9fd url(../images/citypop_icon.png) no-repeat 5px -30px; }
+.citypop-search input { outline: 0; height: 35px; line-height: 35px; width: 146px; position: absolute; left: 28px; top: 0; border: 0; background-color: #f8f9fd; color: #b8bbc1; padding: 0; }
+.citypop-hotcity { float: left; padding-left: 5px; margin-top: 20px; }
+.citypop-hotcity a { margin-left: 10px; display: inline-block; float: left; line-height: 29px; }
+.citypop-hotcity a:hover { color: #ff600f; }
+.citypop-nb { height: 28px; padding: 8px 6px; border-bottom: dotted 1px #cecfd3; }
+.citypop-nb a { width: 19px; height: 19px; line-height: 19px; border-radius: 2px; margin: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; text-align: center; border: solid 1px #cbddeb; background-color: #f7f7f7; float: left; }
+.citypop-nb a:hover { background-color: #767a88; border: solid 1px #767a88; color: #fff; }
+.citypop-scity { height: 255px; overflow-y: scroll; overflow-x: hidden; }
+.citypop-scity dl { border-top: dotted 1px #cecfd3; margin: 0; overflow: hidden; padding: 6px 0; padding: 8px 0\9; }
+.citypop-scity .dlbg { background-color: #f9f9f9; }
+.citypop-scity dl.dlbg-top { border-top: 0; }
+.citypop-scity dl dt, .citypop-scity dl dd { float: left; margin: 0; }
+.citypop-scity dl dt { width: 78px; color: #333; text-align: right; font-weight: bold; padding-top: 2px; }
+.citypop-scity dl dt .tx, .citypop-scity dl dt .nu { height: 20px; line-height: 20px; display: inline-block; float: right; padding: 0; }
+.citypop-scity dl dt .nu { float: left; font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #d0d0d0; font-weight: 100; padding-left: 10px; }
+.citypop-scity dl dd { width: 390px; }
+.citypop-scity dl dd a:link, .citypop-scity dl dd a:active, .citypop-scity dl dd a:visited { height: 20px; line-height: 20px; display: block; float: left; padding: 0 5px; margin: 2px; white-space: nowrap; }
+.citypop-scity dl dd a:hover { height: 20px; line-height: 20px; color: #fff; background-color: #ff9410; _color: #d60000; _background-color: none; }
+.citypop-scity a.current:link, .citypop-scity a.current:hover, .citypop-scity a.current:visited { background-color: #767a88; color: rgb(255, 255, 255); }
+.citypop-scity dl:after, .citypop-scity dl dd:after, .citypop-ct ul li a:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; line-height: 0; }
+.citypop-scity dl, .citypop-scity dl dd, .citypop-ct ul li a { zoom: 1; }
+.citypop-ct { width: 180px; position: absolute; left: -1px; top: 37px; border: solid 1px #ccd3e4; background-color: #fff; display: none; }
+.citypop-ct .zdicon, .citypop-ct .ntextdicon { height: 14px; line-height: 14px; padding: 2px 0 2px 15px; color: #b8bbc1; margin-left: 5px; }
+.citypop-ct .zdicon { background-position: -279px -161px; }
+.citypop-ct .ntextdicon { background-position: -2px -17px; }
+.citypop-ct ul { list-style: none; padding: 0; margin: 0; }
+.citypop-ct ul li { float: none; height: 26px; line-height: 26px; overflow: hidden; clear: both; border-top: dotted 1px #ccd3e4; }
+.citypop-ct ul li a { display: block; height: 26px; line-height: 26px; overflow: hidden; padding: 0 12px; }
+.citypop-ct ul li a:hover, .citypop-ct ul li.selected { background-color: #f9f9f9; }
+.citypop-ct ul li span { float: left; display: inline-block; }
+.citypop-ct ul li b { display: inline-block; font-weight: 100; color: #b8bbc1; float: right; }

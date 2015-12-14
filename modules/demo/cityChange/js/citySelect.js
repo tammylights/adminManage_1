@@ -47,10 +47,10 @@
             },
             makeHtml: function(cityData) {
                   var str = '';
-                  str += '<div id="citypop-container" class="citypop citypop_po" style="display:none;">';
-                  str += '<div class="citypop-content citypop-content2">';
-                  str += '<div class="citypop-content-top citypop-content-top1">';
-                  str += '<div class="citypop-search citypop-search1">';
+                  str += '<div id="citypop-container" class="citypop" style="display:none;">';
+                  str += '<div class="citypop-content">';
+                  str += '<div class="citypop-content-top">';
+                  str += '<div class="citypop-search">';
                   str += '<input type="text" id="citypop-search-input" name="citypop-search-input" value="请输入城市名...">';
                   str += '<div id="citypop-search-result-box" class="citypop-tip-box citypop-ct">';
                   str += '<div id="citypop-search-result-no" class="ntextdicon" style="display: none;">对不起，找不到您输入的内容</div>';
@@ -62,9 +62,9 @@
                         str += privateAttr.makeCityInfo(item);
                   }
                   str += '</div>';
-                  str += '<a href="javascript:void(0);" rel="nofollow" id="ckk-citypop-close" class="citypop-close citypop-close2"><font class="citypop-close2_i">X</font></a></div>';
+                  str += '<a href="javascript:void(0);" rel="nofollow" id="ckk-citypop-close" class="citypop-close"><i></i></a></div>';
                   str += '<div class="citypop-content-info">';
-                  str += '<div class="citypop-nb citypop-nb2">';
+                  str += '<div class="citypop-nb">';
                   for (var j = 0; j < cityData.cityFirstCharacterValArr.length; j++) {
                         var chartUpper = cityData.cityFirstCharacterValArr[j];
                         str += '<a href="javascript:void(0);" name="ckk-city-firstChart" data-key="' + chartUpper + '">' + chartUpper + '</a>';
@@ -151,7 +151,7 @@
                                           var c = n[g];
                                           var li = document.createElement('li');
                                           var a = document.createElement('a');
-                                          a.setAttribute('href', 'javascript:void(0);');
+                                          a.setAttribute('href', '#');
                                           a.setAttribute('data-key', c.id);
                                           a.setAttribute('data-info', '[' + c.id + ',\'' + c.Name + '\'' + ',\'' + c.Pinyin + '\'');
                                           a.innerHTML = '<span>' + c.Name + '</span><b>' + c.Pinyin + '</b>';
@@ -291,6 +291,11 @@
                   privateAttr.select(cityVal);
                   return this;
             },
+            position:function(area){
+                  tools.domById('citypop-container').style.left = area[0] + 'px';
+                  tools.domById('citypop-container').style.top = area[1] + 'px';
+                  return this;
+            },
             reset:function(){
                    me.settings.cityVal = '';
                   privateAttr.select(me.settings.cityVal);
@@ -304,18 +309,7 @@
             show: privateAttr.show,
             close: privateAttr.close,
             changeCity: privateAttr.ChangeCity,
-            reset:privateAttr.reset
+            reset:privateAttr.reset,
+            position:privateAttr.position
       };
 }
-
-function log(arg) {
-      console.log(arg);
-}
-
-var test = new ChangeCity({
-      cityVal: '北京',
-      callback: function(arr, obj) {
-            log(arr);
-      }
-});
-test.show();
