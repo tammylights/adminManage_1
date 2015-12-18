@@ -2,15 +2,16 @@
       var me = this;
       me.settings = {
             cityVal: '',
+            isAllCity:false,
             callback: function() {}
       };
       var tools = {
-            makeArray:function(arrStr){
+            makeArray: function(arrStr) {
                   arrStr = arrStr.substring(1, arrStr.length - 1);
                   arrStr = arrStr.replace(/'/g, '');
                   return arrStr.split(',');
             },
-            extend:function(target,source){
+            extend: function(target, source) {
                   for (var p in source) {
                         if (source.hasOwnProperty(p)) {
                               target[p] = source[p];
@@ -18,7 +19,7 @@
                   }
                   return target;
             },
-            domById:function(domId){
+            domById: function(domId) {
                   return document.getElementById(domId);
             }
       };
@@ -39,7 +40,9 @@
                   };
                   var curData = privateAttr.makeData(opt);
                   var htmlStr = privateAttr.makeHtml(curData);
-                  $('body').append(htmlStr);
+                  if (tools.domById('citypop-container') === null) {
+                        $('body').append(htmlStr);
+                  }
                   if (me.settings.cityVal) {
                         privateAttr.select(me.settings.cityVal);
                   }
@@ -71,6 +74,11 @@
                   }
                   str += '</div>';
                   str += '<div class="citypop-scity" id="citypop-scity">';
+                  if(me.settings.isAllCity){
+                        str += '<dl class="dlbg dlbg-top" style="border-bottom: dotted 1px #cecfd3;">';
+                        str += '<dt><span class="tx">全国：</span></dt>';
+                        str += '<dd><a href="javascript:void(0);" rel="nofollow" data-key="0" data-info="[\'0\',\'全境\',\'quanjing\']" name="ckk-city-name">全境</a></dd></dl>';
+                  }
                   str += '<dl class="dlbg dlbg-top">';
                   str += '<dt><span class="tx">直辖市：</span></dt>';
                   str += '<dd>';
@@ -93,6 +101,7 @@
                               str += '<span class="tx" data-info="[\'' + subItem.id + '\',\'' + subItem.Name + '\',\'' + subItem.Pinyin + '\']">' + subItem.Name + '：</span>';
                               str += '</dt><dd>';
                               var subCity = subItem.City;
+                              str += privateAttr.makeCityInfo(subItem,subItem.Name+'省');
                               for (var l = 0; l < subCity.length; ++l) {
                                     var temps = subCity[l];
                                     str += privateAttr.makeCityInfo(temps);
@@ -180,12 +189,13 @@
                         me.settings.callback(infoArr, this);
                   };
             },
-            makeCityInfo: function(obj) {
+            makeCityInfo: function(obj,provName) {
+                  var tempName = provName?provName:obj.Name;
                   var str = '<a href="javascript:void(0);" rel="nofollow"';
                   str += ' data-key="' + obj.id + '"';
-                  str += ' data-info="[\'' + obj.id + '\',\'' + obj.Name + '\',\'' + obj.Pinyin + '\']"';
+                  str += ' data-info="[\'' + obj.id + '\',\'' + tempName + '\',\'' + obj.Pinyin + '\']"';
                   str += ' name="ckk-city-name">';
-                  str += obj.Name + '</a>';
+                  str += tempName + '</a>';
                   return str;
             },
             isZhiXiaShi: function(arr, cityId) {
@@ -263,6 +273,9 @@
                   }
                   obj.closeObj.onclick = function() {
                         document.getElementById('citypop-container').style.display = 'none';
+                        if (typeof me.settings.close !== 'undefined' && typeof me.settings.close === 'function') {
+                              me.settings.close();
+                        }
                   };
 
                   privateAttr.search(obj);
@@ -291,13 +304,13 @@
                   privateAttr.select(cityVal);
                   return this;
             },
-            position:function(area){
+            position: function(area) {
                   tools.domById('citypop-container').style.left = area[0] + 'px';
                   tools.domById('citypop-container').style.top = area[1] + 'px';
                   return this;
             },
-            reset:function(){
-                   me.settings.cityVal = '';
+            reset: function() {
+                  me.settings.cityVal = '';
                   privateAttr.select(me.settings.cityVal);
                   return this;
             }
@@ -309,7 +322,7 @@
             show: privateAttr.show,
             close: privateAttr.close,
             changeCity: privateAttr.ChangeCity,
-            reset:privateAttr.reset,
-            position:privateAttr.position
+            reset: privateAttr.reset,
+            position: privateAttr.position
       };
 }
