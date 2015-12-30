@@ -234,7 +234,7 @@ function TammyMap() {
 			(function(item,i) {
 				myGeo.getPoint(item.shopAddress, function(point) {
 					if (point) {
-						var myIcon = new BMap.Icon('/src/images/addrOther.png', new BMap.Size(15, 20));
+						var myIcon = new BMap.Icon('/src/images/addrOther.png', new BMap.Size(18, 24));
 						var mark = new BMap.Marker(point, {
 							icon: myIcon
 						});
